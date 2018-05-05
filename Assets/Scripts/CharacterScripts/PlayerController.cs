@@ -1,0 +1,298 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PlayerController : MonoBehaviour
+{
+
+
+    public static PlayerController Instance;
+
+    //Movement Variables//
+
+    //Walk_Run
+    public float MaxSpeed, RunningSpeed;
+    Rigidbody2D MyRB;
+    Animator MyAnim;
+    bool FacingRight;
+
+    //Jump
+    bool Grounded;
+    float GroundCheckRadius = 10;
+    public LayerMask GroundLayer;
+    public Transform GroundCheck;
+    public float JumpHeight; //JumpHeight must be a very high number
+
+
+    //Attacking Variables
+    int noOfClicks;
+    bool CanClick;
+    public bool SprintRight, SprintLeft;
+    public float coolDown = 0.6f, Timer2, Timer3;
+   
+
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+
+        MyRB = GetComponent<Rigidbody2D>();
+        MyAnim = GetComponent<Animator>();
+        FacingRight = true;
+        noOfClicks = 0;
+        Timer2 = 0;
+        Timer2 = 0;
+        CanClick = true;
+
+
+
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+  
+
+
+
+        if (MyRB.bodyType == RigidbodyType2D.Dynamic)
+        {
+            if (Grounded && Input.GetKeyDown("space") || Grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
+            {
+                Grounded = false;
+                MyRB.AddForce(new Vector2(0, JumpHeight));
+                MyAnim.SetBool("IsGrounded", Grounded);
+
+            }
+
+         
+
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                SprintRight = false;
+                SprintLeft = false;
+                CanClick = true;
+            }
+
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            {
+                Timer2 = 0;
+                Timer3 = 0;
+            }
+
+            if (Timer2 > 0)
+            {
+                Timer2 -= Time.deltaTime;
+                CanClick = false;
+
+            }
+
+            if (Timer3 > 0)
+            {
+                Timer3 -= Time.deltaTime;
+
+            }
+
+            if (Timer2 < 0)
+            {
+                Timer2 = 0;
+            }
+
+            if (Timer3 < 0)
+            {
+                Timer3 = 0;
+            }
+
+
+
+            if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 == 0 && Timer3 == 0 && CanClick|| Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 == 0 && Timer3 == 0 && CanClick)
+            {
+                MyAnim.SetTrigger("Attacking");
+                StatsSystem.Instance.CurrentStamina -= 30;
+                CanClick = false;
+
+
+            }
+            else if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 > 0 && Timer3 == 0|| Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 > 0 && Timer3 == 0)
+            {
+                MyAnim.SetTrigger("Attacking2");
+                StatsSystem.Instance.CurrentStamina -= 30;
+                //Timer2 = 0;
+                CanClick = false;
+
+              
+            }
+            else if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer3 > 0 && Timer2 == 0 || Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer3 > 0 && Timer2 == 0)
+            {
+                MyAnim.SetTrigger("Attacking3");
+                StatsSystem.Instance.CurrentStamina -= 30;
+                CanClick = true;
+                
+                
+         
+            }
+
+            
+
+
+
+
+
+
+
+        }
+        else if (MyRB.bodyType == RigidbodyType2D.Static)
+        {
+            MyAnim.SetBool("IsGrounded", true);
+        }
+
+
+
+    }
+
+
+
+
+    //Called every frame
+    void FixedUpdate()
+    {
+
+        if (MyRB.bodyType == RigidbodyType2D.Dynamic)
+        {
+            MyAnim.SetBool("IsRunning", false);
+            float move = Input.GetAxis("Horizontal");
+            MyAnim.SetFloat("Speed", Mathf.Abs(move));
+
+            MyRB.velocity = new Vector2(move * MaxSpeed, MyRB.velocity.y);
+            if (move > 0 && !FacingRight)
+            {
+                Flip();
+            }
+            else if (move < 0 && FacingRight)
+            {
+                Flip();
+            }
+
+            
+            
+            StatsSystem.Instance.CurrentStamina += 2;
+            
+            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 || Input.GetKey(KeyCode.Joystick1Button1) && move != 0 && StatsSystem.Instance.CurrentStamina > 0)
+            {
+
+                MyRB.velocity = new Vector2(move * RunningSpeed, MyRB.velocity.y);
+                MyAnim.SetBool("IsRunning", true);
+                StatsSystem.Instance.CurrentStamina -= 3;
+
+            }
+
+            //Cheking if Grounded
+            Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, GroundLayer);
+
+            MyAnim.SetFloat("VerticalSpeed", MyRB.velocity.y);
+            MyAnim.SetBool("IsGrounded", Grounded);
+
+            if (SprintRight)
+            {
+                MyRB.velocity = new Vector2(140, MyRB.velocity.y);
+            }
+
+            if (SprintLeft)
+            {
+                MyRB.velocity = new Vector2(-140, MyRB.velocity.y);
+            }
+            
+
+
+
+        }
+
+    }
+
+    void Flip()
+    {
+        FacingRight = !FacingRight;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+
+    }
+
+    public void AttackSprint()
+    {
+        if (FacingRight)
+        {
+            SprintRight = true;
+        }
+        else if (!FacingRight)
+        {
+            SprintLeft = true;
+
+        }
+
+    }
+
+    public void EndAttackSprint()
+    {
+        if (FacingRight)
+        {
+            SprintRight = false;
+        }
+        else if (!FacingRight)
+        {
+            SprintLeft = false;
+
+        }
+
+
+    }
+
+    public void Attack2()
+    {
+        Timer2 = coolDown;
+    }
+
+    public void Attack3()
+    {
+        Timer3 = coolDown;
+    }
+
+    public void Attack2End()
+    {
+        Timer2 = 0;
+    }
+
+    public void Attack3End()
+    {
+        Timer3 = 0;
+    }
+
+    public void doNotPlay()
+    {
+        CanClick = false;
+    }
+
+   
+
+ 
+
+    
+
+
+
+    
+    
+
+   
+   
+   
+
+    
+}

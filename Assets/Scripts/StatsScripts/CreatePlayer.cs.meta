@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 46229de48ed320b4cb3606274b13026e
+timeCreated: 1520700219
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - HealthText: {instanceID: 0}
+  - StaminaText: {instanceID: 0}
+  - ManaText: {instanceID: 0}
+  - StrenghText: {instanceID: 0}
+  - SkillText: {instanceID: 0}
+  - KnowledgeText: {instanceID: 0}
+  - StatsPointsText: {instanceID: 0}
+  - item: {fileID: 11400000, guid: e55fdd8c0f0794a40a842bd6efdd5c00, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
