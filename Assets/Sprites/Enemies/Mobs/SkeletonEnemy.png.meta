@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 437ac25efd03d2649bff14fcf885a718
-timeCreated: 1525450309
+timeCreated: 1525517237
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,10 +10,11 @@ TextureImporter:
     21300006: SkeletonEnemy_3
     21300008: SkeletonEnemy_4
     21300010: SkeletonEnemy_5
-    21300012: SkeletonEnemy_8
-    21300014: SkeletonEnemy_9
-    21300016: SkeletonEnemy_10
-    21300018: SkeletonEnemy_11
+    21300012: SkeletonEnemy_9
+    21300014: SkeletonEnemy_10
+    21300016: SkeletonEnemy_11
+    21300018: SkeletonEnemy_6
+    21300020: SkeletonEnemy_12
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,10 +94,10 @@ TextureImporter:
       name: SkeletonEnemy_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 75
-        width: 5
-        height: 6
+        x: 62
+        y: 81
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,7 +108,7 @@ TextureImporter:
       name: SkeletonEnemy_1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 8
         y: 75
         width: 5
         height: 6
@@ -121,10 +122,10 @@ TextureImporter:
       name: SkeletonEnemy_2
       rect:
         serializedVersion: 2
-        x: 60
-        y: 71
-        width: 18
-        height: 14
+        x: 29
+        y: 75
+        width: 5
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +164,22 @@ TextureImporter:
       name: SkeletonEnemy_5
       rect:
         serializedVersion: 2
-        x: 62
-        y: 49
+        x: 66
+        y: 62
+        width: 18
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SkeletonEnemy_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 32
         width: 14
         height: 14
       alignment: 0
@@ -174,7 +189,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonEnemy_8
+      name: SkeletonEnemy_10
       rect:
         serializedVersion: 2
         x: 7
@@ -188,7 +203,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonEnemy_9
+      name: SkeletonEnemy_11
       rect:
         serializedVersion: 2
         x: 30
@@ -202,10 +217,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonEnemy_10
+      name: SkeletonEnemy_6
       rect:
         serializedVersion: 2
-        x: 30
+        x: 9
         y: 71
         width: 3
         height: 3
@@ -216,10 +231,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SkeletonEnemy_11
+      name: SkeletonEnemy_12
       rect:
         serializedVersion: 2
-        x: 9
+        x: 30
         y: 71
         width: 3
         height: 3
