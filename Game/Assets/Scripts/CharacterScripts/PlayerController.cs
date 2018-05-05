@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
   
-
+        
 
 
         if (MyRB.bodyType == RigidbodyType2D.Dynamic)
@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
                 MyAnim.SetBool("IsGrounded", Grounded);
 
             }
-
          
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -81,7 +80,10 @@ public class PlayerController : MonoBehaviour
                 SprintRight = false;
                 SprintLeft = false;
                 CanClick = true;
+    
             }
+
+       
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
             {
@@ -141,7 +143,16 @@ public class PlayerController : MonoBehaviour
          
             }
 
-            
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
+            {
+
+                if (Input.GetKeyDown(KeyCode.B) && Timer2 == 0 && Timer3 == 0 || Input.GetKeyDown(KeyCode.Joystick1Button1) && Timer2 == 0 && Timer3 == 0)
+                {
+                    MyAnim.SetTrigger("Rolling");
+
+                }
+
+            }
 
 
 
