@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 
 
     public static PlayerController Instance;
-
     //Movement Variables//
 
     //Walk_Run
@@ -30,7 +29,8 @@ public class PlayerController : MonoBehaviour
     bool CanClick;
     public bool SprintRight, SprintLeft, Rolling;
     public float coolDown = 0.6f, Timer2, Timer3;
-   
+
+    
 
 
 
@@ -83,9 +83,10 @@ public class PlayerController : MonoBehaviour
     
             }
 
+            
        
 
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
             {
                 Timer2 = 0;
                 Timer3 = 0;
@@ -145,7 +146,7 @@ public class PlayerController : MonoBehaviour
             }
             }
 
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
 
                 if (Input.GetKeyDown(KeyCode.B) && Timer2 == 0 && Timer3 == 0 || Input.GetKeyDown(KeyCode.Joystick1Button1) && Timer2 == 0 && Timer3 == 0)
@@ -155,10 +156,6 @@ public class PlayerController : MonoBehaviour
                 }
 
             }
-
-
-
-
 
 
 

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 122
+  controlID: 125
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -313,14 +313,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1.3802328
+    - e00: 0.9804093
       e01: 0
       e02: 0
-      e03: -132.03406
+      e03: 43.848522
       e10: 0
-      e11: 1.3802328
+      e11: 0.9804093
       e12: 0
-      e13: -27.502655
+      e13: 142.14153
       e20: 0
       e21: 0
       e22: 1
@@ -403,9 +403,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b2270000
-    m_LastClickedID: 0
-    m_ExpandedIDs: eaf8ffff9efbffff00000000
+    m_SelectedIDs: be2c0000
+    m_LastClickedID: 11454
+    m_ExpandedIDs: 9efbfffff4ffffff00000000be2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -461,9 +461,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.3138826, y: -0.5968474, z: 5.622108}
+    m_Target: {x: -63.6168, y: 9.24122, z: 7.5941257}
     speed: 2
-    m_Value: {x: -1.3138826, y: -0.5968474, z: 5.622108}
+    m_Value: {x: -63.6168, y: 9.24122, z: 7.5941257}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -491,9 +491,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 299.31613
+    m_Target: 102.2799
     speed: 2
-    m_Value: 299.31613
+    m_Value: 102.2799
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -648,19 +648,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/CharacterScripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/CharacterScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca280000
-    m_LastClickedID: 10442
-    m_ExpandedIDs: 00000000ae2700004c2800004e280000a8280000ce2800001a2900003029000000ca9a3bffffff7f
+    m_SelectedIDs: 5e280000
+    m_LastClickedID: 10334
+    m_ExpandedIDs: 00000000ac2700004a2800004c280000a6280000cc280000182900002e29000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -688,7 +688,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae2700004c2800004e280000a8280000ce2800001a29000030290000
+    m_ExpandedIDs: 00000000ac2700004a2800004c280000a6280000cc280000182900002e290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
