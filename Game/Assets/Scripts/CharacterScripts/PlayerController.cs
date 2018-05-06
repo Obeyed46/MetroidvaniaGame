@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     //Attacking Variables
     int noOfClicks;
     bool CanClick;
-    public bool SprintRight, SprintLeft;
+    public bool SprintRight, SprintLeft, Rolling;
     public float coolDown = 0.6f, Timer2, Timer3;
    
 
@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
+            if(MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") == false) { 
 
             if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 == 0 && Timer3 == 0 && CanClick|| Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 == 0 && Timer3 == 0 && CanClick)
             {
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour
                 
                 
          
+            }
             }
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
@@ -197,7 +199,7 @@ public class PlayerController : MonoBehaviour
             
             StatsSystem.Instance.CurrentStamina += 2;
             
-            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 || Input.GetKey(KeyCode.Joystick1Button1) && move != 0 && StatsSystem.Instance.CurrentStamina > 0)
+            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 || Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0)
             {
 
                 MyRB.velocity = new Vector2(move * RunningSpeed, MyRB.velocity.y);
@@ -222,6 +224,18 @@ public class PlayerController : MonoBehaviour
                 MyRB.velocity = new Vector2(-140, MyRB.velocity.y);
             }
             
+            if (Rolling)
+            {
+                if (FacingRight)
+                {
+                    MyRB.velocity = new Vector2(250, MyRB.velocity.y);
+                }
+                else if (!FacingRight)
+                {
+                    MyRB.velocity = new Vector2(-250, MyRB.velocity.y);
+                }
+               
+            }
 
 
 
@@ -250,6 +264,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
     public void EndAttackSprint()
     {
         if (FacingRight)
@@ -263,6 +278,16 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+    public void StartRolling()
+    {
+        Rolling = true;
+    }
+    
+    public void EndRolling()
+    {
+        Rolling = false;
     }
 
     public void Attack2()
