@@ -12,8 +12,8 @@ public class EnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Anim.GetComponent<Animator>();
-        Rb.GetComponent<Rigidbody2D>();
+        Anim = GetComponent<Animator>();
+        Rb = GetComponent<Rigidbody2D>();
         FacingRight = true;
 
 	}
