@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour {
 
+
+    //Generic variables
     public Animator Anim;
     public Rigidbody2D Rb;
+    public Transform target;   //Player transform
+
+
+    //Movement variables
     public bool FacingRight;
     bool SprintRight, SprintLeft;
 
@@ -14,6 +21,7 @@ public class EnemyAI : MonoBehaviour {
 
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         FacingRight = true;
 
 	}
@@ -30,7 +38,9 @@ public class EnemyAI : MonoBehaviour {
         }
 
 	}
+    
 
+    //Called every frame
     void FixedUpdate()
     {
         if (SprintRight)
@@ -44,12 +54,21 @@ public class EnemyAI : MonoBehaviour {
         }
     }
 
+
+
+
+
+    ///////METHODS////////
+    
+    
     public void Flip()
     {
         FacingRight = !FacingRight;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
 
     }
+
+
 
     public void AttackSprint()
     {
