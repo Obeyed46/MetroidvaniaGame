@@ -156,6 +156,7 @@ public class PlayerController : MonoBehaviour
 
             }
 
+        
 
 
         }
@@ -167,8 +168,6 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
-
 
 
     //Called every frame

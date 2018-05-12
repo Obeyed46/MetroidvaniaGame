@@ -9,7 +9,8 @@ public class EnemyAI : MonoBehaviour {
     //Generic variables
     public Animator Anim;
     public Rigidbody2D Rb;
-    public Transform target;   //Player transform
+    public Transform target;//Player transform
+    public Collider2D coll;
 
 
     //Movement variables
@@ -22,6 +23,7 @@ public class EnemyAI : MonoBehaviour {
 
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         FacingRight = true;
 
