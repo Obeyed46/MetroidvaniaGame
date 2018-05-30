@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour {
         Rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        FacingRight = true;
+        FacingRight = false;
 
 	}
 	
@@ -38,6 +38,16 @@ public class EnemyAI : MonoBehaviour {
         {
             SprintLeft = false;
             SprintRight = false;
+        }
+
+        if(transform.position.x > target.position.x && FacingRight)
+        {
+            Flip();
+        }
+        
+        if(transform.position.x < target.position.x && !FacingRight)
+        {
+            Flip();
         }
 
 	}

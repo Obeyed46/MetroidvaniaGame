@@ -156,6 +156,17 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+            {
+                Physics2D.IgnoreLayerCollision(0, 9,true);
+
+            }
+            else
+            {
+                Physics2D.IgnoreLayerCollision(0, 9, false);
+            }
+
+            
         
 
 

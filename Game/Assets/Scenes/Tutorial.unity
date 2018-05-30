@@ -1680,7 +1680,7 @@ GameObject:
   - component: {fileID: 956140033}
   - component: {fileID: 956140037}
   - component: {fileID: 956140038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkeletonEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1820,6 +1820,7 @@ MonoBehaviour:
   Anim: {fileID: 0}
   Rb: {fileID: 0}
   target: {fileID: 0}
+  coll: {fileID: 0}
   MaxDistance: 0
   speed: 150
   FacingRight: 0
