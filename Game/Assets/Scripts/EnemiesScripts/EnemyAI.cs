@@ -16,10 +16,10 @@ public class EnemyAI : MonoBehaviour {
     //Movement variables
     public float MaxDistance, speed;
     public bool FacingRight;
-    bool SprintRight, SprintLeft, CanFlip;
+    bool SprintRight, SprintLeft, CanFlip, Chase;
 
     //Attacking variables
-    public float timer, coolDown = 2.0f;
+    public float timer, timer2, coolDown = 2.0f;      //Timer = AttackDelay, Timer2 = delay between attack and run
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +30,9 @@ public class EnemyAI : MonoBehaviour {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         FacingRight = false;
         CanFlip = true;
+        Chase = true;
         timer = 0;
+        timer2 = 0;
 
 	}
 	
@@ -41,10 +43,13 @@ public class EnemyAI : MonoBehaviour {
 
         if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
         {
+            Chase = false;
+            Anim.SetBool("Attacking", false);
             CanFlip = false;
         }
         else
         {
+            Chase = true;
             CanFlip = true;
         }
 
@@ -52,8 +57,10 @@ public class EnemyAI : MonoBehaviour {
         {
             SprintLeft = false;
             SprintRight = false;
+            Anim.SetBool("Attacking", false);
             Rb.velocity = new Vector2(0, 0);
         }
+
 
         if(timer > 0)
         {
@@ -63,6 +70,16 @@ public class EnemyAI : MonoBehaviour {
         if(timer < 0)
         {
             timer = 0;
+        }
+
+        if(timer2 > 0)
+        {
+            timer2 -= Time.deltaTime;
+        }
+
+        if(timer2 < 0)
+        {
+            timer2 = 0;
         }
 
         if(transform.position.x > target.position.x && FacingRight && CanFlip)
@@ -81,9 +98,8 @@ public class EnemyAI : MonoBehaviour {
     //Called every frame
     void FixedUpdate()
     {
-        if (Vector2.Distance(transform.position, target.position) < 300 && Vector2.Distance(transform.position, target.position) > 50)
+        if (Vector2.Distance(transform.position, target.position) < 300 && Vector2.Distance(transform.position, target.position) > 50 && Chase && timer2 == 0)
         {
-            
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
             Anim.SetFloat("speed", 1);
         }
@@ -92,7 +108,9 @@ public class EnemyAI : MonoBehaviour {
             Anim.SetFloat("speed", 0);
             if (timer == 0)
             {
-                Anim.SetTrigger("Attacking");
+                Anim.SetBool("Attacking", true);
+                Chase = false;
+            
             }
         }
 
@@ -121,12 +139,16 @@ public class EnemyAI : MonoBehaviour {
 
     }
 
-    public void SetTimer()
+    public void AttackDelay()
     {
         timer = coolDown;
 
     }
 
+    public void RunDelayAfterAttack()
+    {
+        timer2 = 0.8f;
+    }
 
     public void AttackSprint()
     {
@@ -144,15 +166,8 @@ public class EnemyAI : MonoBehaviour {
 
     public void EndAttackSprint()
     {
-        if (FacingRight)
-        {
-            SprintRight = false;
-        }
-        else if (!FacingRight)
-        {
-            SprintLeft = false;
-
-        }
+        SprintLeft = false;
+        SprintRight = false;
 
 
     }
