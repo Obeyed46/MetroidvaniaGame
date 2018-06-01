@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour {
 
     //Attacking variables
     public float timer, timer2, coolDown = 2.0f;      //Timer = AttackDelay, Timer2 = delay between attack and run
+    public int NumbOfPatterns; //Number attacks of the mob
 
 	// Use this for initialization
 	void Start () {
@@ -40,11 +41,12 @@ public class EnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-        if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
+        
+        if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
         {
             Chase = false;
             Anim.SetBool("Attacking", false);
+            Anim.SetBool("Attacking2", false);
             CanFlip = false;
         }
         else
@@ -53,11 +55,13 @@ public class EnemyAI : MonoBehaviour {
             CanFlip = true;
         }
 
+
         if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             SprintLeft = false;
             SprintRight = false;
             Anim.SetBool("Attacking", false);
+            Anim.SetBool("Attacking2", false);
             Rb.velocity = new Vector2(0, 0);
         }
 
@@ -108,9 +112,7 @@ public class EnemyAI : MonoBehaviour {
             Anim.SetFloat("speed", 0);
             if (timer == 0)
             {
-                Anim.SetBool("Attacking", true);
-                Chase = false;
-            
+                Attacking();
             }
         }
 
@@ -132,6 +134,25 @@ public class EnemyAI : MonoBehaviour {
     ///////METHODS////////
     
     
+    public void Attacking()
+    {
+        int randInt = new int();
+        randInt = Random.Range(1, NumbOfPatterns + 1);
+        switch (randInt)
+        {
+              case 1:
+                  Anim.SetBool("Attacking", true);
+                  break;
+              case 2:
+                  Anim.SetBool("Attacking2", true);
+                  break;
+              default:
+                  break;
+        }
+            
+        Chase = false;
+    }
+
     public void Flip()
     {
         FacingRight = !FacingRight;
