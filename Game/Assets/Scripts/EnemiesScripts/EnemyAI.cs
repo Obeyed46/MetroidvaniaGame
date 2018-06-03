@@ -86,16 +86,7 @@ public class EnemyAI : MonoBehaviour {
             timer2 = 0;
         }
 
-        if(transform.position.x > target.position.x && FacingRight && CanFlip)
-        {
-            Flip();
-        }
         
-        if(transform.position.x < target.position.x && !FacingRight && CanFlip)
-        {
-            Flip();
-        }
-
 	}
     
 
@@ -112,7 +103,7 @@ public class EnemyAI : MonoBehaviour {
             Anim.SetFloat("speed", 0);
             if (timer == 0)
             {
-                Attacking();
+                Attack();
             }
         }
 
@@ -125,6 +116,17 @@ public class EnemyAI : MonoBehaviour {
         {
             Rb.velocity = new Vector2(-100, Rb.velocity.y);
         }
+
+        if (transform.position.x > target.position.x && FacingRight && CanFlip)
+        {
+            Flip();
+        }
+
+        if (transform.position.x < target.position.x && !FacingRight && CanFlip)
+        {
+            Flip();
+        }
+
     }
 
 
@@ -134,7 +136,7 @@ public class EnemyAI : MonoBehaviour {
     ///////METHODS////////
     
     
-    public void Attacking()
+    public void Attack()
     {
         int randInt = new int();
         randInt = Random.Range(1, NumbOfPatterns + 1);

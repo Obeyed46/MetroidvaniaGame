@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float MaxSpeed, RunningSpeed;
     Rigidbody2D MyRB;
     Animator MyAnim;
+    public Collider2D coll;
     bool FacingRight;
 
     //Jump
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
         MyRB = GetComponent<Rigidbody2D>();
         MyAnim = GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
         FacingRight = true;
         noOfClicks = 0;
         Timer2 = 0;
