@@ -8758,6 +8758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 150
   RunningSpeed: 200
+  coll: {fileID: 0}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 256

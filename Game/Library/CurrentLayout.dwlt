@@ -369,9 +369,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: be270000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 8e0efeff4436feff047ffeffaad4ffffb6deffff9efbffff00000000
+    m_ExpandedIDs: 9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -427,9 +427,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -31.325104, y: 0.6580386, z: -0.014241934}
+    m_Target: {x: -26.451366, y: -1.2899865, z: 0.09726608}
     speed: 2
-    m_Value: {x: -31.325104, y: 0.6580386, z: -0.014241934}
+    m_Value: {x: -26.451366, y: -1.2899865, z: 0.09726608}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -457,9 +457,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 246.99748
+    m_Target: 235.8826
     speed: 2
-    m_Value: 246.99748
+    m_Value: 235.8826
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -648,18 +648,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 102}
-    m_SelectedIDs: a02d0000
-    m_LastClickedID: 11680
+    scrollPos: {x: 0, y: 150}
+    m_SelectedIDs: a62d0000
+    m_LastClickedID: 11686
     m_ExpandedIDs: 00000000ae2700003c2a0000c22a0000e22a0000222c0000dc2c0000a62d0000f42d0000442f0000ac2f0000ba30000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009c290000f230000062360000862700000000000050280000b0270000802700005e290000402e000058290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
