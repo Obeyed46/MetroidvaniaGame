@@ -42,11 +42,12 @@ public class EnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
         {
             Chase = false;
             Anim.SetBool("Attacking", false);
             Anim.SetBool("Attacking2", false);
+            Anim.SetBool("Attacking3", false);
             CanFlip = false;
         }
         else
@@ -62,6 +63,7 @@ public class EnemyAI : MonoBehaviour {
             SprintRight = false;
             Anim.SetBool("Attacking", false);
             Anim.SetBool("Attacking2", false);
+            Anim.SetBool("Attacking3", false);
             Rb.velocity = new Vector2(0, 0);
         }
 
@@ -86,6 +88,7 @@ public class EnemyAI : MonoBehaviour {
             timer2 = 0;
         }
 
+        Debug.Log(SprintLeft);
         
 	}
     
@@ -148,6 +151,9 @@ public class EnemyAI : MonoBehaviour {
               case 2:
                   Anim.SetBool("Attacking2", true);
                   break;
+              case 3:
+                  Anim.SetBool("Attacking3", true);
+                  break; 
               default:
                   break;
         }

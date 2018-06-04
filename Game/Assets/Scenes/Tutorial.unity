@@ -1827,7 +1827,7 @@ MonoBehaviour:
   timer: 0
   timer2: 0
   coolDown: 2
-  NumbOfPatterns: 2
+  NumbOfPatterns: 3
 --- !u!1 &975351028
 GameObject:
   m_ObjectHideFlags: 0
