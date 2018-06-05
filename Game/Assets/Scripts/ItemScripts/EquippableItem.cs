@@ -17,7 +17,7 @@ public enum EquipmentType
 [CreateAssetMenu]
 public class EquippableItem : Item {
 
-    public int PhysicDEF, FireDEF, EletricDEF, PoisonDEF, PhysicDamage, FireDamage, EletricDamage, PoisonDamage, Weight;
+    public int PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF, PhysicDamage, FireDamage, EletricDamage, MagicDamage, PoisonDamage, Weight;
     [Space]
     public EquipmentType EquipmentType;
     [Space]

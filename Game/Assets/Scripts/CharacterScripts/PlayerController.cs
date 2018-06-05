@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D MyRB;
     Animator MyAnim;
     public Collider2D coll;
-    bool FacingRight;
+    bool FacingRight, CanMove;
 
     //Jump
     bool Grounded;
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
         Timer2 = 0;
         Timer2 = 0;
         CanClick = true;
+        CanMove = true;
 
 
 
@@ -158,6 +159,17 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+            {
+                CanMove = false;
+            }
+            else
+            {
+                CanMove = true;
+            }
+
+            
+
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
             {
                 Physics2D.IgnoreLayerCollision(0, 9,true);
@@ -193,14 +205,17 @@ public class PlayerController : MonoBehaviour
             float move = Input.GetAxis("Horizontal");
             MyAnim.SetFloat("Speed", Mathf.Abs(move));
 
-            MyRB.velocity = new Vector2(move * MaxSpeed, MyRB.velocity.y);
-            if (move > 0 && !FacingRight)
+            if (CanMove)
             {
-                Flip();
-            }
-            else if (move < 0 && FacingRight)
-            {
-                Flip();
+                MyRB.velocity = new Vector2(move * MaxSpeed, MyRB.velocity.y);
+                if (move > 0 && !FacingRight)
+                {
+                    Flip();
+                }
+                else if (move < 0 && FacingRight)
+                {
+                    Flip();
+                }
             }
 
             
@@ -224,12 +239,12 @@ public class PlayerController : MonoBehaviour
 
             if (SprintRight)
             {
-                MyRB.velocity = new Vector2(140, MyRB.velocity.y);
+                MyRB.velocity = new Vector2(100, MyRB.velocity.y);
             }
 
             if (SprintLeft)
             {
-                MyRB.velocity = new Vector2(-140, MyRB.velocity.y);
+                MyRB.velocity = new Vector2(-100, MyRB.velocity.y);
             }
             
             if (Rolling)

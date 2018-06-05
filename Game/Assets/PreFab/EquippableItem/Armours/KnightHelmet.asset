@@ -17,10 +17,12 @@ MonoBehaviour:
   PhysicDEF: 20
   FireDEF: 5
   EletricDEF: 2
+  MagicDEF: 5
   PoisonDEF: 1
   PhysicDamage: 0
   FireDamage: 0
   EletricDamage: 0
+  MagicDamage: 0
   PoisonDamage: 0
   Weight: 2
   EquipmentType: 0

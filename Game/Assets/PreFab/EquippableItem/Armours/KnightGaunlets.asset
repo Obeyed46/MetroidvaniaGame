@@ -13,18 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Knight Gaunlets
   Icon: {fileID: 21300000, guid: 0c55496a83c479749b30b2a45d239a5e, type: 3}
+  DisableHair: 0
   PhysicDEF: 10
   FireDEF: 5
   EletricDEF: 1
+  MagicDEF: 5
   PoisonDEF: 1
   PhysicDamage: 0
   FireDamage: 0
   EletricDamage: 0
+  MagicDamage: 0
   PoisonDamage: 0
   Weight: 0
-  PhysicDefensePercentage: 0
-  PhysicDamagePercentage: 0
   EquipmentType: 2
   Sprite1: {fileID: 21300000, guid: 0c55496a83c479749b30b2a45d239a5e, type: 3}
   Sprite2: {fileID: 21300002, guid: 0c55496a83c479749b30b2a45d239a5e, type: 3}
   Sprite3: {fileID: 0}
+  AnimLayer: 0

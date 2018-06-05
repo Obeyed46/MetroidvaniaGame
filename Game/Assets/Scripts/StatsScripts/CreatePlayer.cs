@@ -20,7 +20,7 @@ public class CreatePlayer : MonoBehaviour {
     public int StatsPoints = 0;
     public Text StatsPointsText, PlayerLevelText;
 
-    public int HealthPoints, StaminaPoints, ManaPoints, Weapon1Dam, Weapon2Dam, Weight, PhysicDEF, FireDEF, EletricDEF, PoisonDEF, Awarness, Persuasion;
+    public int HealthPoints, StaminaPoints, ManaPoints, Weapon1Dam, Weapon2Dam, Weight, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF, Awarness, Persuasion;
     public int WhatEquip;
 
 
@@ -205,6 +205,7 @@ public class CreatePlayer : MonoBehaviour {
         Texts3[7].text = FireDEF.ToString();
         Texts3[8].text = EletricDEF.ToString();
         Texts3[9].text = PoisonDEF.ToString();
+        Texts3[12].text = MagicDEF.ToString();
         Texts3[10].text = Awarness.ToString();
         Texts3[11].text = Persuasion.ToString();
 

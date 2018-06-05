@@ -13,18 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Sicario Gear
   Icon: {fileID: 21300002, guid: 8526f5751209a5241a46fbfd9f730a7b, type: 3}
+  DisableHair: 0
   PhysicDEF: 25
   FireDEF: 10
   EletricDEF: 5
+  MagicDEF: 15
   PoisonDEF: 2
   PhysicDamage: 0
   FireDamage: 0
   EletricDamage: 0
+  MagicDamage: 0
   PoisonDamage: 0
   Weight: 0
-  PhysicDefensePercentage: 0
-  PhysicDamagePercentage: 0
   EquipmentType: 1
   Sprite1: {fileID: 21300002, guid: 8526f5751209a5241a46fbfd9f730a7b, type: 3}
   Sprite2: {fileID: 0}
   Sprite3: {fileID: 0}
+  AnimLayer: 0
