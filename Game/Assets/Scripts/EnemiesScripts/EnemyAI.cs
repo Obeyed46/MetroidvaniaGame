@@ -95,10 +95,10 @@ public class EnemyAI : MonoBehaviour {
             TakeDamage();      
         }
 
-        /*if(Health <= 0)
+        if(Health <= 0)
         {
-            Destroy(this);
-        }*/
+            Health = 0;
+        }
 
         Debug.Log(Health);
 	}
