@@ -15,6 +15,8 @@ public class Character : MonoBehaviour {
     public SpriteRenderer HeadSprite, ChestSprite,ChestSprite1,ChestSprite2, HandsSprite1,HandsSprite2, LegsSprite1,LegsSprite2,LegsSprite3, Weapon1Sprite, Weapon2Sprite, Accessory1Sprite, Accessory2Sprite;
     public SpriteRenderer Hair;
 
+    public BoxCollider2D weaponCollider;
+
 
     public static string PlayerName { get; set; }
     public static int PlayerLevel { get; set; }
@@ -53,11 +55,10 @@ public class Character : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        
-        
-  
+        Physics2D.IgnoreLayerCollision(8, 10);
+    }
 		
-	}
+	
 
 
     //On changing scene

@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour {
     public Transform target;//Player transform
     public Collider2D coll;
 
-
     //Movement variables
     public float MaxDistance, speed;
     public bool FacingRight;
@@ -21,6 +20,9 @@ public class EnemyAI : MonoBehaviour {
     //Attacking variables
     public float timer, timer2, coolDown = 2.0f;      //Timer = AttackDelay, Timer2 = delay between attack and run
     public int NumbOfPatterns; //Number attacks of the mob
+
+    //Stats
+    public int Health, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;
 
 	// Use this for initialization
 	void Start () {
@@ -88,8 +90,17 @@ public class EnemyAI : MonoBehaviour {
             timer2 = 0;
         }
 
-        Debug.Log(SprintLeft);
-        
+        if(Physics2D.IsTouching(Character.Instance.weaponCollider, coll))
+        {
+            TakeDamage();      
+        }
+
+        /*if(Health <= 0)
+        {
+            Destroy(this);
+        }*/
+
+        Debug.Log(Health);
 	}
     
 
@@ -159,6 +170,21 @@ public class EnemyAI : MonoBehaviour {
         }
             
         Chase = false;
+    }
+
+    public void TakeDamage()
+    {
+        EquippableItem PlayerWeapon;
+        PlayerWeapon = new EquippableItem();
+        if(EquipmentPanel.Instance.EquipSlots[4].Item != null && EquipmentPanel.Instance.EquipSlots[4].Item is EquippableItem)
+        {
+            PlayerWeapon = (EquippableItem)EquipmentPanel.Instance.EquipSlots[4].Item;
+            Health -= PlayerWeapon.PhysicDamage;
+        }
+        else
+        {
+            Health -= CreatePlayer.Instance.Weapon1Dam;
+        }
     }
 
     public void Flip()

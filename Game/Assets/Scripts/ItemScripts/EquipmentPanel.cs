@@ -10,9 +10,14 @@ public class EquipmentPanel : MonoBehaviour {
     public EquipmentSlot[] EquipSlots;
 
     public EquippableItem KnightHelmet;
-   
+
 
     public event Action<Item> OnItemRightClickedEvent;
+
+    private void Start()
+    {
+        Instance = this;
+    }
 
     //Called every frame
     void Update()

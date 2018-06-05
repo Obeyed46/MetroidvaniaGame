@@ -1828,6 +1828,13 @@ MonoBehaviour:
   timer2: 0
   coolDown: 2
   NumbOfPatterns: 3
+  Health: 1000
+  Poise: 0
+  PhysicDEF: 0
+  FireDEF: 0
+  EletricDEF: 0
+  MagicDEF: 0
+  PoisonDEF: 0
 --- !u!1 &975351028
 GameObject:
   m_ObjectHideFlags: 0
