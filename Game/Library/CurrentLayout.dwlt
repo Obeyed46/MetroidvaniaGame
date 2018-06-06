@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 683, y: 492}
+  m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 107
+  controlID: 123
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,7 +130,7 @@ MonoBehaviour:
     y: 0
     width: 2067
     height: 1307
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 11
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 2067
     height: 782
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 12
 --- !u!114 &8
@@ -369,9 +369,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_SelectedIDs: f056ffff
+    m_LastClickedID: -43280
+    m_ExpandedIDs: 9efbffff000000000e370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -427,9 +427,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -78.18297, y: -9.383873, z: 0.20509633}
+    m_Target: {x: -55.825134, y: 8.9150505, z: -0.10031666}
     speed: 2
-    m_Value: {x: -78.18297, y: -9.383873, z: 0.20509633}
+    m_Value: {x: -55.825134, y: 8.9150505, z: -0.10031666}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -457,9 +457,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 216.77792
+    m_Target: 247.37962
     speed: 2
-    m_Value: 216.77792
+    m_Value: 247.37962
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -522,8 +522,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 510
     y: 92
-    width: 1556
-    height: 758
+    width: 1555
+    height: 761
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
@@ -531,7 +531,7 @@ MonoBehaviour:
     - {fileID: 1107005055426251414, guid: 6cf5ecf505211d44d83187d689f5875e, type: 2}
     - {fileID: 1102779756860320706, guid: 6cf5ecf505211d44d83187d689f5875e, type: 2}
     - {fileID: 1107330556472708648, guid: acb8139afccb1af40ac4aa8ee5633c05, type: 2}
-    - {fileID: 1107334725375101112, guid: b8bdd07d211e972488d3d39a4d0eb349, type: 2}
+    - {fileID: 1107765798302850634, guid: 48ee8f554aaa6674481fbd16758cc3d1, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -665,33 +665,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/EnemiesScripts
+    - Assets/PreFab/Enviroment
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/EnemiesScripts
+  - Assets/PreFab/Enviroment
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 302a0000
-    m_LastClickedID: 10800
+    m_SelectedIDs: e62d0000
+    m_LastClickedID: 11750
     m_ExpandedIDs: 00000000ae270000d2280000c22a0000622b0000122d00000a2e0000ea2e0000482f0000562f000084300000c8300000403100007c32000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PreFab
+      m_OriginalName: PreFab
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 12924
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -732,8 +732,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300009c29000062360000862700000000000050280000b0270000802700005e290000402e000058290000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300009c29000062360000862700000000000050280000b0270000802700005e290000402e000058290000902d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
