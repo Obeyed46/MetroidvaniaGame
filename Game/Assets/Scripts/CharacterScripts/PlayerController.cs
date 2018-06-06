@@ -339,13 +339,6 @@ public class PlayerController : MonoBehaviour
         CanClick = false;
     }
 
-
-    public void DisableAttackCollision()
-    {
-        CanCollide = false;
-        Physics2D.IgnoreLayerCollision(9, 10, true);
-    }
-
    public void EnableAttackCollision()
     {
         CanCollide = true;
