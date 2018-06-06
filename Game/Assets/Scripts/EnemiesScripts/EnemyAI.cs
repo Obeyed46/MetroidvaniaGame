@@ -90,10 +90,6 @@ public class EnemyAI : MonoBehaviour {
             timer2 = 0;
         }
 
-        if(Physics2D.IsTouching(Character.Instance.weaponCollider, coll))
-        {
-            TakeDamage();      
-        }
 
         if(Health <= 0)
         {
@@ -139,6 +135,12 @@ public class EnemyAI : MonoBehaviour {
         if (transform.position.x < target.position.x && !FacingRight && CanFlip)
         {
             Flip();
+        }
+
+        if (Physics2D.IsTouching(Character.Instance.weaponCollider, coll) && PlayerController.Instance.CanCollide)
+        {
+            Physics2D.IgnoreLayerCollision(9, 10, true);
+            TakeDamage();
         }
 
     }

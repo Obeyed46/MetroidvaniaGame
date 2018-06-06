@@ -80,6 +80,8 @@ public class Character : MonoBehaviour {
 
         }
     }
+
+    
         
            
     

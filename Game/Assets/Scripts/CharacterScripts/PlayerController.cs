@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     //Attacking Variables
     int noOfClicks;
     bool CanClick;
-    public bool SprintRight, SprintLeft, Rolling;
+    public bool SprintRight, SprintLeft, Rolling, CanCollide;
     public float coolDown = 0.6f, Timer2, Timer3;
 
     
@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         Timer2 = 0;
         CanClick = true;
         CanMove = true;
+        CanCollide = true;
 
 
 
@@ -336,6 +337,19 @@ public class PlayerController : MonoBehaviour
     public void doNotPlay()
     {
         CanClick = false;
+    }
+
+
+    public void DisableAttackCollision()
+    {
+        CanCollide = false;
+        Physics2D.IgnoreLayerCollision(9, 10, true);
+    }
+
+   public void EnableAttackCollision()
+    {
+        CanCollide = true;
+        Physics2D.IgnoreLayerCollision(9, 10, false);
     }
 
    
