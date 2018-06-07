@@ -8867,6 +8867,7 @@ MonoBehaviour:
   SprintRight: 0
   SprintLeft: 0
   Rolling: 0
+  CanCollide: 0
   coolDown: 0.4
   Timer2: 0
   Timer3: 0
@@ -8938,6 +8939,7 @@ MonoBehaviour:
   Accessory2Sprite: {fileID: 0}
   Hair: {fileID: 281308869}
   weaponCollider: {fileID: 132757131}
+  playerCollider: {fileID: 1832600180}
 --- !u!4 &1832600185
 Transform:
   m_ObjectHideFlags: 0

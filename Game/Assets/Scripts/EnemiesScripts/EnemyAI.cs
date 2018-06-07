@@ -11,18 +11,20 @@ public class EnemyAI : MonoBehaviour {
     public Rigidbody2D Rb;
     public Transform target;//Player transform
     public Collider2D coll;
-
+    public Collider2D weaponColl;
+    
     //Movement variables
     public float MaxDistance, speed;
     public bool FacingRight;
     bool SprintRight, SprintLeft, CanFlip, Chase;
-
+    
     //Attacking variables
-    public float timer, timer2, coolDown = 2.0f;      //Timer = AttackDelay, Timer2 = delay between attack and run
+    public float timer, timer2, coolDown = 0.7f;      //Timer = AttackDelay, Timer2 = delay between attack and run
     public int NumbOfPatterns; //Number attacks of the mob
-
+    
     //Stats
-    public int Health, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;
+    public int Health, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;  //DEF stats
+    public int PhysicDamage, FireDamage, EletricDamage, MagicDamage, PoisonDamage; //Offensive stats
 
 	// Use this for initialization
 	void Start () {
@@ -96,7 +98,6 @@ public class EnemyAI : MonoBehaviour {
             Health = 0;
         }
 
-        Debug.Log(Health);
 	}
     
 
@@ -119,12 +120,15 @@ public class EnemyAI : MonoBehaviour {
 
         if (SprintRight)
         {
-            Rb.velocity = new Vector2(100, Rb.velocity.y);
+            Rb.velocity = new Vector2(300, Rb.velocity.y);
         }
-
-        if (SprintLeft)
+        else if (SprintLeft)
         {
-            Rb.velocity = new Vector2(-100, Rb.velocity.y);
+            Rb.velocity = new Vector2(-300, Rb.velocity.y);
+        }
+        else
+        {
+            Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
 
         if (transform.position.x > target.position.x && FacingRight && CanFlip)
@@ -141,6 +145,12 @@ public class EnemyAI : MonoBehaviour {
         {
             Physics2D.IgnoreLayerCollision(9, 10, true);
             TakeDamage();
+        }
+
+        if(Physics2D.IsTouching(weaponColl, Character.Instance.playerCollider))
+        {
+            Physics2D.IgnoreLayerCollision(0, 11, true);
+            StatsSystem.Instance.TakeDamage(PhysicDamage);
         }
 
     }
@@ -204,7 +214,7 @@ public class EnemyAI : MonoBehaviour {
 
     public void RunDelayAfterAttack()
     {
-        timer2 = 0.8f;
+        timer2 = 0.5f;
     }
 
     public void AttackSprint()
@@ -223,9 +233,22 @@ public class EnemyAI : MonoBehaviour {
 
     public void EndAttackSprint()
     {
-        SprintLeft = false;
-        SprintRight = false;
+        if (FacingRight)
+        {
+            SprintRight = false;
+        }
+        else if (!FacingRight)
+        {
+            SprintLeft = false;
+
+        }
 
 
+
+    }
+
+    public void EnableAttackCollision()
+    {
+        Physics2D.IgnoreLayerCollision(0, 11, false);
     }
 }

@@ -16,6 +16,7 @@ public class Character : MonoBehaviour {
     public SpriteRenderer Hair;
 
     public BoxCollider2D weaponCollider;
+    public BoxCollider2D playerCollider;
 
 
     public static string PlayerName { get; set; }
