@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour {
     public Transform target;//Player transform
     public Collider2D coll;
     public Collider2D weaponColl;
+    public SpriteRenderer emptyBar, fullBar;
     
     //Movement variables
     public float MaxDistance, speed;
@@ -23,7 +24,7 @@ public class EnemyAI : MonoBehaviour {
     public int NumbOfPatterns; //Number attacks of the mob
     
     //Stats
-    public int Health, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;  //DEF stats
+    public int MaxHealth, CurrentHealth, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;  //DEF stats
     public int PhysicDamage, FireDamage, EletricDamage, MagicDamage, PoisonDamage; //Offensive stats
 
 	// Use this for initialization
@@ -36,6 +37,9 @@ public class EnemyAI : MonoBehaviour {
         FacingRight = false;
         CanFlip = true;
         Chase = true;
+        CurrentHealth = MaxHealth;
+        emptyBar.enabled = false;
+        fullBar.enabled = false;
         timer = 0;
         timer2 = 0;
 
@@ -93,10 +97,18 @@ public class EnemyAI : MonoBehaviour {
         }
 
 
-        if(Health <= 0)
+        if(CurrentHealth <= 0)
         {
-            Health = 0;
+            CurrentHealth = 0;
         }
+
+        if(CurrentHealth < MaxHealth)
+        {
+            emptyBar.enabled = true;
+            fullBar.enabled = true;
+        }
+
+        Debug.Log(CurrentHealth);
 
 	}
     
@@ -120,11 +132,11 @@ public class EnemyAI : MonoBehaviour {
 
         if (SprintRight)
         {
-            Rb.velocity = new Vector2(400, Rb.velocity.y);
+            Rb.velocity = new Vector2(360, Rb.velocity.y);
         }
         else if (SprintLeft)
         {
-            Rb.velocity = new Vector2(-400, Rb.velocity.y);
+            Rb.velocity = new Vector2(-360, Rb.velocity.y);
         }
         else
         {
@@ -191,11 +203,11 @@ public class EnemyAI : MonoBehaviour {
         if(EquipmentPanel.Instance.EquipSlots[4].Item != null && EquipmentPanel.Instance.EquipSlots[4].Item is EquippableItem)
         {
             PlayerWeapon = (EquippableItem)EquipmentPanel.Instance.EquipSlots[4].Item;
-            Health -= PlayerWeapon.PhysicDamage;
+            CurrentHealth -= PlayerWeapon.PhysicDamage;
         }
         else
         {
-            Health -= CreatePlayer.Instance.Weapon1Dam;
+            CurrentHealth -= CreatePlayer.Instance.Weapon1Dam;
         }
 
     }

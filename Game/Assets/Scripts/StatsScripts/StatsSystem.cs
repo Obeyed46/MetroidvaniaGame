@@ -56,6 +56,11 @@ public class StatsSystem : MonoBehaviour {
         StaminaBarLoss = CurrentStamF / CreatePlayer.Instance.StaminaPoints;
         StaminaBarImage.transform.localScale = new Vector3(StaminaBarLoss, StaminaBarImage.transform.localScale.y, StaminaBarImage.transform.localScale.z);
 
+       /* if(CurrentHealht <= 0)
+        {
+            PlayerController.Instance.MyAnim.SetBool("Die", true);
+        }*/
+
     }
 
     public void UpdateUI()
@@ -76,6 +81,7 @@ public class StatsSystem : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        PlayerController.Instance.MyAnim.SetBool("Stagger", true);
         float MaxHealht = CreatePlayer.Instance.HealthPoints;
         float Dam = damage;
         CurrentHealht -= damage;

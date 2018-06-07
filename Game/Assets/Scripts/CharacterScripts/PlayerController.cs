@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
 
     //Walk_Run
     public float MaxSpeed, RunningSpeed;
-    Rigidbody2D MyRB;
-    Animator MyAnim;
+    public Rigidbody2D MyRB;
+    public Animator MyAnim;
     public Collider2D coll;
     bool FacingRight, CanMove;
 
@@ -63,11 +63,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-  
-        
-
-
-        if (MyRB.bodyType == RigidbodyType2D.Dynamic)
+        if (MyRB.bodyType == RigidbodyType2D.Dynamic || MyRB.bodyType == RigidbodyType2D.Kinematic)
         {
             if (Grounded && Input.GetKeyDown("space") || Grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
@@ -87,7 +83,6 @@ public class PlayerController : MonoBehaviour
             }
 
             
-       
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
             {
@@ -160,13 +155,23 @@ public class PlayerController : MonoBehaviour
 
             }
 
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
             {
                 CanMove = false;
             }
             else
             {
                 CanMove = true;
+            }
+
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger"))
+            {
+                MyAnim.SetBool("Stagger", false);
+            }
+
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+            {
+                MyAnim.SetBool("Die", false);
             }
 
             
@@ -344,6 +349,11 @@ public class PlayerController : MonoBehaviour
     {
         CanCollide = true;
         Physics2D.IgnoreLayerCollision(9, 10, false);
+    }
+
+    public void Die()
+    {
+        Destroy(this);
     }
 
    
