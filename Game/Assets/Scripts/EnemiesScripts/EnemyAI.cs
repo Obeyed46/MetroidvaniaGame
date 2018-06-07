@@ -120,11 +120,11 @@ public class EnemyAI : MonoBehaviour {
 
         if (SprintRight)
         {
-            Rb.velocity = new Vector2(300, Rb.velocity.y);
+            Rb.velocity = new Vector2(400, Rb.velocity.y);
         }
         else if (SprintLeft)
         {
-            Rb.velocity = new Vector2(-300, Rb.velocity.y);
+            Rb.velocity = new Vector2(-400, Rb.velocity.y);
         }
         else
         {
@@ -197,6 +197,7 @@ public class EnemyAI : MonoBehaviour {
         {
             Health -= CreatePlayer.Instance.Weapon1Dam;
         }
+
     }
 
     public void Flip()
