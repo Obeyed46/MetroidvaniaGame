@@ -149,6 +149,16 @@ public class EnemyAI : MonoBehaviour {
                     Attack();
                 }
             }
+
+            if (transform.position.x > target.position.x && FacingRight && CanFlip)
+            {
+                Flip();
+            }
+
+            if (transform.position.x < target.position.x && !FacingRight && CanFlip)
+            {
+                Flip();
+            }
         }
         else if(target == null)
         {
@@ -173,16 +183,6 @@ public class EnemyAI : MonoBehaviour {
         else
         {
             Rb.velocity = new Vector2(0, Rb.velocity.y);
-        }
-
-        if (transform.position.x > target.position.x && FacingRight && CanFlip)
-        {
-            Flip();
-        }
-
-        if (transform.position.x < target.position.x && !FacingRight && CanFlip)
-        {
-            Flip();
         }
 
         if (Physics2D.IsTouching(Character.Instance.weaponCollider, coll) && PlayerController.Instance.CanCollide)
