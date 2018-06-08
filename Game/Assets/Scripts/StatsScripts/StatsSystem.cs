@@ -7,12 +7,12 @@ public class StatsSystem : MonoBehaviour {
 
     public static StatsSystem Instance;
 
-    public Image HealthBarImage, StaminaBarImage;
+    public Image HealthBarImage, StaminaBarImage, YellowHealthBar;
 
     public int CurrentHealht, CurrentStamina, CurrentMana;
     public Text CurrentHealthText, CurrentStaminaText, CurrentManaText;
     float StaminaBarLoss, CurrentStamF, MaxStamF;
-
+    float YellowXDim;
 
     //Comes before start
     void Awake()
@@ -25,6 +25,7 @@ public class StatsSystem : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        YellowXDim = YellowHealthBar.transform.localScale.x;
 
         UpdateUI();
 
@@ -55,6 +56,12 @@ public class StatsSystem : MonoBehaviour {
         MaxStamF = CreatePlayer.Instance.StaminaPoints;
         StaminaBarLoss = CurrentStamF / CreatePlayer.Instance.StaminaPoints;
         StaminaBarImage.transform.localScale = new Vector3(StaminaBarLoss, StaminaBarImage.transform.localScale.y, StaminaBarImage.transform.localScale.z);
+
+        YellowHealthBar.transform.localScale = new Vector3(YellowXDim, YellowHealthBar.transform.localScale.y, YellowHealthBar.transform.localScale.z);
+        if (YellowHealthBar.transform.localScale.x > HealthBarImage.transform.localScale.x)
+        {
+            YellowXDim -= 0.003f;
+        }
 
        /* if(CurrentHealht <= 0)
         {

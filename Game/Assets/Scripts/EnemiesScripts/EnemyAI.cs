@@ -12,7 +12,10 @@ public class EnemyAI : MonoBehaviour {
     public Transform target;//Player transform
     public Collider2D coll;
     public Collider2D weaponColl;
-    public SpriteRenderer emptyBar, fullBar;
+
+    //HealthBars variables
+    public SpriteRenderer emptyBar, fullBar, yellowBar;
+    float YellowXDim;
     
     //Movement variables
     public float MaxDistance, speed;
@@ -40,6 +43,8 @@ public class EnemyAI : MonoBehaviour {
         CurrentHealth = MaxHealth;
         emptyBar.enabled = false;
         fullBar.enabled = false;
+        yellowBar.enabled = false;
+        YellowXDim = 1.0f;
         timer = 0;
         timer2 = 0;
 
@@ -106,10 +111,14 @@ public class EnemyAI : MonoBehaviour {
         {
             emptyBar.enabled = true;
             fullBar.enabled = true;
+            yellowBar.enabled = true;
         }
 
-        Debug.Log(CurrentHealth);
-
+        yellowBar.transform.localScale = new Vector3(YellowXDim, yellowBar.transform.localScale.y, yellowBar.transform.localScale.z);
+        if(YellowXDim > fullBar.transform.localScale.x)
+        {
+            YellowXDim -= 0.001f;
+        }
 	}
     
 
@@ -209,6 +218,11 @@ public class EnemyAI : MonoBehaviour {
         {
             CurrentHealth -= CreatePlayer.Instance.Weapon1Dam;
         }
+
+        float wDam = PlayerWeapon.PhysicDamage, MaxHeatlh = MaxHealth;
+        fullBar.transform.localScale = new Vector3(fullBar.transform.localScale.x - (wDam / MaxHealth), fullBar.transform.localScale.y, fullBar.transform.localScale.z);
+
+
 
     }
 

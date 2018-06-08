@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
 
             
             
-            StatsSystem.Instance.CurrentStamina += 2;
+            StatsSystem.Instance.CurrentStamina += 1;
             
             if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 || Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0)
             {
