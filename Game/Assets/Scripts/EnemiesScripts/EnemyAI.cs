@@ -11,11 +11,10 @@ public class EnemyAI : MonoBehaviour {
     public Rigidbody2D Rb;
     public Transform target;//Player transform
     public Collider2D coll;
-    public Collider2D weaponColl;
+    public GameObject enemy;
 
     //HealthBars variables
     public SpriteRenderer emptyBar, fullBar, yellowBar;
-    float YellowXDim;
     
     //Movement variables
     public float MaxDistance, speed;
@@ -25,7 +24,8 @@ public class EnemyAI : MonoBehaviour {
     //Attacking variables
     public float timer, timer2, coolDown = 0.7f;      //Timer = AttackDelay, Timer2 = delay between attack and run
     public int NumbOfPatterns; //Number attacks of the mob
-    
+    public Collider2D weaponColl;
+
     //Stats
     public int MaxHealth, CurrentHealth, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;  //DEF stats
     public int PhysicDamage, FireDamage, EletricDamage, MagicDamage, PoisonDamage; //Offensive stats
@@ -44,7 +44,6 @@ public class EnemyAI : MonoBehaviour {
         emptyBar.enabled = false;
         fullBar.enabled = false;
         yellowBar.enabled = false;
-        YellowXDim = 1.0f;
         timer = 0;
         timer2 = 0;
 
@@ -114,10 +113,20 @@ public class EnemyAI : MonoBehaviour {
             yellowBar.enabled = true;
         }
 
-        yellowBar.transform.localScale = new Vector3(YellowXDim, yellowBar.transform.localScale.y, yellowBar.transform.localScale.z);
-        if(YellowXDim > fullBar.transform.localScale.x)
+        if(yellowBar.transform.localScale.x > fullBar.transform.localScale.x)
         {
-            YellowXDim -= 0.001f;
+            yellowBar.transform.localScale = new Vector3(yellowBar.transform.localScale.x - 0.003f, yellowBar.transform.localScale.y, yellowBar.transform.localScale.z);
+        }
+
+        if(fullBar.transform.localScale.x < 0)
+        {
+            fullBar.transform.localScale = new Vector3(0, fullBar.transform.localScale.y, fullBar.transform.localScale.z);
+            yellowBar.transform.localScale = new Vector3(0, yellowBar.transform.localScale.y, yellowBar.transform.localScale.z);
+        }
+
+        if(CurrentHealth <= 0)
+        {
+            Destroy(enemy);
         }
 	}
     
@@ -125,27 +134,41 @@ public class EnemyAI : MonoBehaviour {
     //Called every frame
     void FixedUpdate()
     {
-        if (Vector2.Distance(transform.position, target.position) < 300 && Vector2.Distance(transform.position, target.position) > 50 && Chase && timer2 == 0)
+        if (target != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-            Anim.SetFloat("speed", 1);
-        }
-        else if(Vector2.Distance(transform.position,target.position) < 50)
-        {
-            Anim.SetFloat("speed", 0);
-            if (timer == 0)
+            if (Vector2.Distance(transform.position, target.position) < 300 && Vector2.Distance(transform.position, target.position) > 50 && Chase && timer2 == 0)
             {
-                Attack();
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
+                Anim.SetFloat("speed", 1);
             }
+            else if (Vector2.Distance(transform.position, target.position) < 50)
+            {
+                Anim.SetFloat("speed", 0);
+                if (timer == 0)
+                {
+                    Attack();
+                }
+            }
+        }
+        else if(target == null)
+        {
+            Chase = false;
+            Anim.SetBool("Attacking", false);
+            Anim.SetBool("Attacking2", false);
+            Anim.SetBool("Attacking3", false);
+            CanFlip = false;
+            SprintLeft = false;
+            SprintRight = false;
+            Rb.velocity = new Vector2(0, 0);
         }
 
         if (SprintRight)
         {
-            Rb.velocity = new Vector2(360, Rb.velocity.y);
+            Rb.velocity = new Vector2(280, Rb.velocity.y);
         }
         else if (SprintLeft)
         {
-            Rb.velocity = new Vector2(-360, Rb.velocity.y);
+            Rb.velocity = new Vector2(-280, Rb.velocity.y);
         }
         else
         {

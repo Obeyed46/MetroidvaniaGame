@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
 
     public static PlayerController Instance;
+    public GameObject player;
+
     //Movement Variables//
 
     //Walk_Run
@@ -30,10 +32,6 @@ public class PlayerController : MonoBehaviour
     public bool SprintRight, SprintLeft, Rolling, CanCollide;
     public float coolDown = 0.6f, Timer2, Timer3;
 
-    
-
-
-
     private void Awake()
     {
         Instance = this;
@@ -42,7 +40,6 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         MyRB = GetComponent<Rigidbody2D>();
         MyAnim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
@@ -53,10 +50,6 @@ public class PlayerController : MonoBehaviour
         CanClick = true;
         CanMove = true;
         CanCollide = true;
-
-
-
-
 
     }
 
@@ -81,7 +74,6 @@ public class PlayerController : MonoBehaviour
                 CanClick = true;
     
             }
-
             
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
@@ -169,12 +161,6 @@ public class PlayerController : MonoBehaviour
                 MyAnim.SetBool("Stagger", false);
             }
 
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
-            {
-                MyAnim.SetBool("Die", false);
-            }
-
-            
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
             {
@@ -187,9 +173,10 @@ public class PlayerController : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(0, 9, false);
             }
 
-            
-        
-
+            if(StatsSystem.Instance.CurrentHealht <= 0)
+            {
+                Destroy(player);
+            }
 
         }
         else if (MyRB.bodyType == RigidbodyType2D.Static)
@@ -353,7 +340,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(this);
+        Destroy(player);
     }
 
    

@@ -12,7 +12,6 @@ public class StatsSystem : MonoBehaviour {
     public int CurrentHealht, CurrentStamina, CurrentMana;
     public Text CurrentHealthText, CurrentStaminaText, CurrentManaText;
     float StaminaBarLoss, CurrentStamF, MaxStamF;
-    float YellowXDim;
 
     //Comes before start
     void Awake()
@@ -25,7 +24,6 @@ public class StatsSystem : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        YellowXDim = YellowHealthBar.transform.localScale.x;
 
         UpdateUI();
 
@@ -57,16 +55,17 @@ public class StatsSystem : MonoBehaviour {
         StaminaBarLoss = CurrentStamF / CreatePlayer.Instance.StaminaPoints;
         StaminaBarImage.transform.localScale = new Vector3(StaminaBarLoss, StaminaBarImage.transform.localScale.y, StaminaBarImage.transform.localScale.z);
 
-        YellowHealthBar.transform.localScale = new Vector3(YellowXDim, YellowHealthBar.transform.localScale.y, YellowHealthBar.transform.localScale.z);
         if (YellowHealthBar.transform.localScale.x > HealthBarImage.transform.localScale.x)
         {
-            YellowXDim -= 0.003f;
+            YellowHealthBar.transform.localScale = new Vector3(YellowHealthBar.transform.localScale.x - 0.003f, YellowHealthBar.transform.localScale.y, YellowHealthBar.transform.localScale.z);
         }
 
-       /* if(CurrentHealht <= 0)
+        if(HealthBarImage.transform.localScale.x <= 0)
         {
-            PlayerController.Instance.MyAnim.SetBool("Die", true);
-        }*/
+            HealthBarImage.transform.localScale = new Vector3(0, HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
+            YellowHealthBar.transform.localScale = new Vector3(0, YellowHealthBar.transform.localScale.y, YellowHealthBar.transform.localScale.z);
+        }
+
 
     }
 
