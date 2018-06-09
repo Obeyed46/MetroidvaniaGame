@@ -16,12 +16,23 @@ public class Inventory : MonoBehaviour {
     
     private void Update()
     {
-        for(int i=0; i < itemSlots.Length; i++)
+        /*for(int i=0; i < itemSlots.Length; i++)
         {
             itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
 
-        }
+        }*/
+
+       
         
+    }
+
+    private void Start()
+    {
+        /*for (int i = 0; i < itemSlots.Length; i++)
+        {
+            itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+
+        }*/
     }
 
     private void Awake()

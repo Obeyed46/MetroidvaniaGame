@@ -31,6 +31,22 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void EquipFromSlot(int nSlot)
+    {
+        if (Inventory.Instance.itemSlots[nSlot].Item != null)
+        {
+            EquipFromInventory(Inventory.Instance.itemSlots[nSlot].Item);
+        }
+    }
+
+    public void UnequipFromSlot(int nEquipSlot)
+    {
+        if (EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item != null)
+        {
+            UnequipFromEquipPanel(EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item);
+        }
+    }
+
     public void EquipFromInventory(Item Item)
     {
         if (Item is EquippableItem)

@@ -17,16 +17,21 @@ public class EquipmentPanel : MonoBehaviour {
     private void Start()
     {
         Instance = this;
+        /*for (int i = 0; i < EquipSlots.Length; i++)
+        {
+            EquipSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
+
+        }*/
     }
 
     //Called every frame
     void Update()
     {
-        for (int i = 0; i < EquipSlots.Length; i++)
+       /* for (int i = 0; i < EquipSlots.Length; i++)
         {
             EquipSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
 
-        }
+        }*/
 
        /*f (EquipSlots[1].Item.DisableHair == true)
         {
