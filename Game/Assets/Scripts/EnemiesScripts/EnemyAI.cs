@@ -174,11 +174,11 @@ public class EnemyAI : MonoBehaviour {
 
         if (SprintRight)
         {
-            Rb.velocity = new Vector2(280, Rb.velocity.y);
+            Rb.velocity = new Vector2(330, Rb.velocity.y);
         }
         else if (SprintLeft)
         {
-            Rb.velocity = new Vector2(-280, Rb.velocity.y);
+            Rb.velocity = new Vector2(-330, Rb.velocity.y);
         }
         else
         {

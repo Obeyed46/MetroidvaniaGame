@@ -33,17 +33,23 @@ public class InventoryManager : MonoBehaviour
 
     public void EquipFromSlot(int nSlot)
     {
-        if (Inventory.Instance.itemSlots[nSlot].Item != null)
+        if (MenùManager.Instance.InventoryMenu.enabled)
         {
-            EquipFromInventory(Inventory.Instance.itemSlots[nSlot].Item);
+            if (Inventory.Instance.itemSlots[nSlot].Item != null)
+            {
+                EquipFromInventory(Inventory.Instance.itemSlots[nSlot].Item);
+            }
         }
     }
 
     public void UnequipFromSlot(int nEquipSlot)
     {
-        if (EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item != null)
+        if (MenùManager.Instance.InventoryMenu.enabled)
         {
-            UnequipFromEquipPanel(EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item);
+            if (EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item != null)
+            {
+                UnequipFromEquipPanel(EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item);
+            }
         }
     }
 

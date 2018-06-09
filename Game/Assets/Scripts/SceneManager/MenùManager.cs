@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MenùManager : MonoBehaviour {
 
     public Canvas InventoryMenu, StatsMenu;
-    MenùManager Instance;
+    public static MenùManager Instance;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,11 @@ public class MenùManager : MonoBehaviour {
         InventoryMenu.enabled = false;
         StatsMenu.enabled = false;
 
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     // Update is called once per frame
