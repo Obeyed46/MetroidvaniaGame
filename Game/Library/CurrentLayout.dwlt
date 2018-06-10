@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 121
+  controlID: 123
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,9 +365,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3e070000
+    m_SelectedIDs: 94cef6ff
     m_LastClickedID: 0
-    m_ExpandedIDs: f0fbffff00000000
+    m_ExpandedIDs: f0fbffff00000000381800007c1a0000b01a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -51.45492, y: -0.7354276, z: -0.1875}
+    m_Target: {x: -39.08612, y: 46.621098, z: 3.705177}
     speed: 2
-    m_Value: {x: -51.45492, y: -0.7354276, z: -0.1875}
+    m_Value: {x: -39.08612, y: 46.621098, z: 3.705177}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -456,9 +456,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 201.91927
+    m_Target: 178.52942
     speed: 2
-    m_Value: 201.91927
+    m_Value: 178.52942
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -544,14 +544,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1.0835342
+    - e00: 1.3311162
       e01: 0
       e02: 0
-      e03: 484.82318
+      e03: -469.0161
       e10: 0
-      e11: 1.0835342
+      e11: 1.3311162
       e12: 0
-      e13: 354.92975
+      e13: 82.07294
       e20: 0
       e21: 0
       e22: 1
@@ -619,9 +619,9 @@ MonoBehaviour:
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_CurrentEditor: 0
+  m_CurrentEditor: 1
   m_LayerEditor:
-    m_SelectedLayerIndex: 0
+    m_SelectedLayerIndex: 2
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -659,19 +659,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/SceneManager
+    - Assets/Scripts/CharacterScripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/SceneManager
+  - Assets/Scripts/CharacterScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4a140000
-    m_LastClickedID: 5194
+    scrollPos: {x: 0, y: 29}
+    m_SelectedIDs: 000e0000
+    m_LastClickedID: 3584
     m_ExpandedIDs: 0000000012090000680a0000a60c00006a0d0000620f00008c1000008e110000fc1100000a12000068130000b413000040140000a415000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0

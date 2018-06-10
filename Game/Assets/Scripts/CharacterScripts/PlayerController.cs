@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -106,35 +106,44 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if(MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") == false) { 
-
-            if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 == 0 && Timer3 == 0 && CanClick|| Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 == 0 && Timer3 == 0 && CanClick)
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") == false)
             {
-                MyAnim.SetTrigger("Attacking");
-                StatsSystem.Instance.CurrentStamina -= 30;
-                CanClick = false;
+
+                if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 == 0 && Timer3 == 0 && CanClick || Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 == 0 && Timer3 == 0 && CanClick)
+                {
+                    MyAnim.SetTrigger("Attacking");
+                    StatsSystem.Instance.CurrentStamina -= 30;
+                    CanClick = false;
 
 
-            }
-            else if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 > 0 && Timer3 == 0|| Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 > 0 && Timer3 == 0)
-            {
-                MyAnim.SetTrigger("Attacking2");
-                StatsSystem.Instance.CurrentStamina -= 30;
-                //Timer2 = 0;
-                CanClick = false;
+                }
+                else if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 > 0 && Timer3 == 0 || Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 > 0 && Timer3 == 0)
+                {
+                    MyAnim.SetTrigger("Attacking2");
+                    StatsSystem.Instance.CurrentStamina -= 30;
+                    //Timer2 = 0;
+                    CanClick = false;
 
-              
-            }
-            else if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer3 > 0 && Timer2 == 0 || Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer3 > 0 && Timer2 == 0)
-            {
-                MyAnim.SetTrigger("Attacking3");
-                StatsSystem.Instance.CurrentStamina -= 30;
-                CanClick = true;
+
+                }
+                else if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer3 > 0 && Timer2 == 0 || Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer3 > 0 && Timer2 == 0)
+                {
+                    MyAnim.SetTrigger("Attacking3");
+                    StatsSystem.Instance.CurrentStamina -= 30;
+                    CanClick = true;
+
+
+
+                }
+
+                if (Input.GetKeyDown(KeyCode.JoystickButton3) && StatsSystem.Instance.CurrentStamina > 10)
+                {
+                    MyAnim.SetTrigger("HeavyAttack");
+                    StatsSystem.Instance.CurrentStamina -= 40;
+                }
                 
-                
-         
             }
-            }
+            
 
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
