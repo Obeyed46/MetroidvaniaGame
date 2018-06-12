@@ -96,6 +96,16 @@ public class StatsSystem : MonoBehaviour {
         UpdateUI();
     }
 
+    public void GainHealth(int healthIncrease)
+    {
+        float MaxHealht = CreatePlayer.Instance.HealthPoints;
+        float Dam = healthIncrease;
+        CurrentHealht += healthIncrease;
+        HealthBarImage.transform.localScale = new Vector3(HealthBarImage.transform.localScale.x + (Dam / MaxHealht), HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
+        Debug.Log(healthIncrease / CreatePlayer.Instance.HealthPoints);
+        UpdateUI();
+    }
+
     private void OnLevelWasLoaded(int level)
     {
      

@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
                 SprintRight = false;
                 SprintLeft = false;
                 CanClick = true;
-    
             }
             
 

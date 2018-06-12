@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
 
     public static InventoryManager Instance;
 
+    public ItemSlot[] ConsumableItemSlots;
+
     public EquippableItem[] KnightItems;
 
     private void Start()
@@ -37,7 +39,15 @@ public class InventoryManager : MonoBehaviour
         {
             if (Inventory.Instance.itemSlots[nSlot].Item != null)
             {
-                EquipFromInventory(Inventory.Instance.itemSlots[nSlot].Item);
+                if(Inventory.Instance.itemSlots[nSlot].Item is EquippableItem)
+                {
+                    EquipFromInventory(Inventory.Instance.itemSlots[nSlot].Item);
+                }
+                else if(Inventory.Instance.itemSlots[nSlot].Item is ConsumableItem)
+                {
+                    ConsumableItemSlots[0].Item = Inventory.Instance.itemSlots[nSlot].Item;
+                    inventory.RemoveItem(Inventory.Instance.itemSlots[nSlot].Item);
+                }
             }
         }
     }
