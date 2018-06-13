@@ -45,8 +45,16 @@ public class InventoryManager : MonoBehaviour
                 }
                 else if(Inventory.Instance.itemSlots[nSlot].Item is ConsumableItem)
                 {
-                    ConsumableItemSlots[0].Item = Inventory.Instance.itemSlots[nSlot].Item;
-                    inventory.RemoveItem(Inventory.Instance.itemSlots[nSlot].Item);
+                    bool hasEquiped = false;
+                    for (int i=0 ;i<ConsumableItemSlots.Length; i++)
+                    {
+                        if(ConsumableItemSlots[i].Item == null && !hasEquiped)
+                        {
+                            ConsumableItemSlots[i].Item = Inventory.Instance.itemSlots[nSlot].Item;
+                            inventory.RemoveItem(Inventory.Instance.itemSlots[nSlot].Item);
+                            hasEquiped = true;
+                        }
+                    }
                 }
             }
         }
@@ -61,6 +69,28 @@ public class InventoryManager : MonoBehaviour
                 UnequipFromEquipPanel(EquipmentPanel.Instance.EquipSlots[nEquipSlot].Item);
             }
         }
+    }
+
+    public void ItemsArrayRightShift()
+    {
+        ConsumableItem app;
+        app = (ConsumableItem)ConsumableItemSlots[ConsumableItemSlots.Length - 1].Item;
+        for(int i=1; i < ConsumableItemSlots.Length; i++)
+        {
+
+            ConsumableItemSlots[i].Item = ConsumableItemSlots[i-1].Item;
+        }
+        ConsumableItemSlots[0].Item = app;
+    }
+
+    public void ItemsArrayLeftShift()
+    {
+        ConsumableItem app;
+        app = (ConsumableItem)ConsumableItemSlots[0].Item;
+        for (int i=0; i < ConsumableItemSlots.Length-1; i++){
+            ConsumableItemSlots[i].Item = ConsumableItemSlots[i + 1].Item;
+        }
+        ConsumableItemSlots[ConsumableItemSlots.Length - 1].Item = app;
     }
 
     public void EquipFromInventory(Item Item)

@@ -6,9 +6,6 @@ using UnityEngine;
 public class ConsumableItem : Item {
 
     public int HealthIncrease, StaminaRegenIncrease, StrenghtIncrease, DEFIncrease;
-    
-    public void Use()
-    {
-        StatsSystem.Instance.GainHealth(HealthIncrease);  
-    }
+    [Space]
+    public int numbOfItems;
 }

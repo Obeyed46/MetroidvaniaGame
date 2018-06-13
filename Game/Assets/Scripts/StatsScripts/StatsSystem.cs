@@ -41,11 +41,12 @@ public class StatsSystem : MonoBehaviour {
             CurrentStamina = 0;
 
         }
-        if(CurrentHealht >= CreatePlayer.Instance.HealthPoints)
+        if(CurrentHealht > CreatePlayer.Instance.HealthPoints)
         {
             CurrentHealht = CreatePlayer.Instance.HealthPoints;
+            UpdateUI();
         }
-        if(CurrentStamina >= CreatePlayer.Instance.StaminaPoints)
+        if(CurrentStamina > CreatePlayer.Instance.StaminaPoints)
         {
             CurrentStamina = CreatePlayer.Instance.StaminaPoints;
         }
@@ -64,6 +65,12 @@ public class StatsSystem : MonoBehaviour {
         {
             HealthBarImage.transform.localScale = new Vector3(0, HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
             YellowHealthBar.transform.localScale = new Vector3(0, YellowHealthBar.transform.localScale.y, YellowHealthBar.transform.localScale.z);
+        }
+
+        if (HealthBarImage.transform.localScale.x > 0.987f)
+        {
+            HealthBarImage.transform.localScale = new Vector3(0.987f, HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
+            YellowHealthBar.transform.localScale = new Vector3(0.987f, YellowHealthBar.transform.localScale.y, YellowHealthBar.transform.localScale.z);
         }
 
 
@@ -92,7 +99,6 @@ public class StatsSystem : MonoBehaviour {
         float Dam = damage;
         CurrentHealht -= damage;
         HealthBarImage.transform.localScale = new Vector3(HealthBarImage.transform.localScale.x - (Dam/MaxHealht), HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
-        Debug.Log(damage / CreatePlayer.Instance.HealthPoints);
         UpdateUI();
     }
 
@@ -102,7 +108,6 @@ public class StatsSystem : MonoBehaviour {
         float Dam = healthIncrease;
         CurrentHealht += healthIncrease;
         HealthBarImage.transform.localScale = new Vector3(HealthBarImage.transform.localScale.x + (Dam / MaxHealht), HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
-        Debug.Log(healthIncrease / CreatePlayer.Instance.HealthPoints);
         UpdateUI();
     }
 

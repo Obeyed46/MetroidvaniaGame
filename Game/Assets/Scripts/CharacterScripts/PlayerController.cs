@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public bool SprintRight, SprintLeft, Rolling, CanCollide;
     public float coolDown = 0.6f, Timer2, Timer3;
 
+    //Items variables
+    bool CanShift;
+
     private void Awake()
     {
         Instance = this;
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
         CanClick = true;
         CanMove = true;
         CanCollide = true;
+        CanShift = true;
 
     }
 
@@ -58,6 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         if (MyRB.bodyType == RigidbodyType2D.Dynamic || MyRB.bodyType == RigidbodyType2D.Kinematic)
         {
+            //Jumping
             if (Grounded && Input.GetKeyDown("space") || Grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 Grounded = false;
@@ -65,16 +70,23 @@ public class PlayerController : MonoBehaviour
                 MyAnim.SetBool("IsGrounded", Grounded);
 
             }
-         
+            
 
+            //During idle animations
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
                 SprintRight = false;
                 SprintLeft = false;
                 CanClick = true;
+                
+                //Use consumable item
+                if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+                {
+                    UseItem();
+                }
             }
-            
 
+            //Timers and delays
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1"))
             {
                 Timer2 = 0;
@@ -105,6 +117,8 @@ public class PlayerController : MonoBehaviour
             }
 
 
+
+            //Attacking
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") == false)
             {
 
@@ -144,6 +158,7 @@ public class PlayerController : MonoBehaviour
             }
             
 
+            //Rolling
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
 
@@ -155,6 +170,20 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            //Disable collision with enemy during the roll
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+            {
+                Physics2D.IgnoreLayerCollision(0, 9, true);
+                Physics2D.IgnoreLayerCollision(0, 11, true);
+
+            }
+            else
+            {
+                Physics2D.IgnoreLayerCollision(0, 9, false);
+            }
+
+
+            //Do not walk or run during other animations
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
             {
                 CanMove = false;
@@ -164,28 +193,31 @@ public class PlayerController : MonoBehaviour
                 CanMove = true;
             }
 
+
+            //Not loop the stagger animations
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger"))
             {
                 MyAnim.SetBool("Stagger", false);
             }
 
-
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
-            {
-                Physics2D.IgnoreLayerCollision(0, 9,true);
-                Physics2D.IgnoreLayerCollision(0, 11, true);
-
-            }
-            else
-            {
-                Physics2D.IgnoreLayerCollision(0, 9, false);
-            }
-
+            //Die
             if(StatsSystem.Instance.CurrentHealht <= 0)
             {
                 Destroy(player);
             }
-
+          
+            //Item shifts
+            if(Input.GetAxisRaw("DPadX") == 1)
+            {
+                InventoryManager.Instance.ItemsArrayRightShift();
+                CanShift = false;
+            }
+            else if(Input.GetAxisRaw("DPadX") == -1 && CanShift)
+            {
+                InventoryManager.Instance.ItemsArrayLeftShift();
+                CanShift = false;
+            }
+           
         }
         else if (MyRB.bodyType == RigidbodyType2D.Static)
         {
@@ -220,8 +252,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            
-            
+
+          
             StatsSystem.Instance.CurrentStamina += 1;
             
             if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 || Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0)
@@ -287,6 +319,20 @@ public class PlayerController : MonoBehaviour
 
         }
 
+    }
+
+    public void UseItem()
+    {
+        ConsumableItem currentItem;
+        if(InventoryManager.Instance.ConsumableItemSlots[0].Item != null && InventoryManager.Instance.ConsumableItemSlots[0].Item is ConsumableItem)
+        {
+            currentItem = (ConsumableItem)InventoryManager.Instance.ConsumableItemSlots[0].Item;
+            StatsSystem.Instance.GainHealth(currentItem.HealthIncrease);
+        }
+        else
+        {
+            Debug.Log("Item not found");
+        }
     }
 
 

@@ -2039,7 +2039,7 @@ MonoBehaviour:
   coolDown: 2
   NumbOfPatterns: 3
   weaponColl: {fileID: 737043027}
-  MaxHealth: 1000
+  MaxHealth: 500
   CurrentHealth: 0
   Poise: 0
   PhysicDEF: 0
