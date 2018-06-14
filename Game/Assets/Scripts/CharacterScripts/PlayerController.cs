@@ -9,16 +9,16 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     public GameObject player;
 
-    //Movement Variables//
+    //Variables//
 
-    //Walk_Run
+    //Walk_Run variables
     public float MaxSpeed, RunningSpeed;
     public Rigidbody2D MyRB;
     public Animator MyAnim;
     public Collider2D coll;
     bool FacingRight, CanMove;
 
-    //Jump
+    //Jump variables
     bool Grounded;
     float GroundCheckRadius = 10;
     public LayerMask GroundLayer;
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public float coolDown = 0.6f, Timer2, Timer3;
 
     //Items variables
-    bool CanShift;
+    float timerBetweenShifts;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         CanClick = true;
         CanMove = true;
         CanCollide = true;
-        CanShift = true;
+        timerBetweenShifts = 0f;
 
     }
 
@@ -116,6 +116,16 @@ public class PlayerController : MonoBehaviour
                 Timer3 = 0;
             }
 
+            if(timerBetweenShifts > 0)
+            {
+                timerBetweenShifts -= Time.deltaTime;
+            }
+
+            if(timerBetweenShifts < 0)
+            {
+                timerBetweenShifts = 0;
+            }
+
 
 
             //Attacking
@@ -170,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
             }
 
-            //Disable collision with enemy during the roll
+            //Disable collision with enemies during the roll
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
             {
                 Physics2D.IgnoreLayerCollision(0, 9, true);
@@ -183,7 +193,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            //Do not walk or run during other animations
+            //Do not walk or run during other animations and actions
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
             {
                 CanMove = false;
@@ -194,7 +204,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            //Not loop the stagger animations
+            //Not loop the stagger animation
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger"))
             {
                 MyAnim.SetBool("Stagger", false);
@@ -207,15 +217,15 @@ public class PlayerController : MonoBehaviour
             }
           
             //Item shifts
-            if(Input.GetAxisRaw("DPadX") == 1)
+            if(Input.GetAxisRaw("DPadX") == 1 && timerBetweenShifts == 0)
             {
                 InventoryManager.Instance.ItemsArrayRightShift();
-                CanShift = false;
+                timerBetweenShifts = 0.2f;
             }
-            else if(Input.GetAxisRaw("DPadX") == -1 && CanShift)
+            else if(Input.GetAxisRaw("DPadX") == -1 && timerBetweenShifts == 0)
             {
                 InventoryManager.Instance.ItemsArrayLeftShift();
-                CanShift = false;
+                timerBetweenShifts = 0.2f;
             }
            
         }

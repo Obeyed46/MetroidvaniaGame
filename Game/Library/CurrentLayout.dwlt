@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 681, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 123
+  controlID: 121
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,9 +365,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22090000
+    m_SelectedIDs: ba070000
     m_LastClickedID: 0
-    m_ExpandedIDs: fe70faff32a6faffc0e1faffdaf0faffee6cfcfff892fcff0030fdffc644fdffd695fdff3ca9fdffc6bcfdffbadcfdff82ecfdffe82dfeffc64cfeff8094feff30affeff02c3feff9cdcfeff5cfcfeffe4fefefff0fbffff00000000e2c80000bcc9000036cb0000dce90000b6ea000030ec00005803010064040100a208010048330100d65201004a7b0100327e01009c150200c61502003216020042170200d8170200ae180200daa90200f2a9020008ab0200f0ad020050af0200a0af0200
+    m_ExpandedIDs: f0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -50.782597, y: 16.411795, z: 3.0948129}
+    m_Target: {x: -45.52416, y: 32.091278, z: 3.375}
     speed: 2
-    m_Value: {x: -50.782597, y: 16.411795, z: 3.0948129}
+    m_Value: {x: -45.52416, y: 32.091278, z: 3.375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -456,9 +456,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 369.9119
+    m_Target: 332.85062
     speed: 2
-    m_Value: 369.9119
+    m_Value: 332.85062
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -659,20 +659,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/ItemScripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/ItemScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 141}
-    m_SelectedIDs: 90110000
-    m_LastClickedID: 4496
-    m_ExpandedIDs: 00000000120900006c0a0000ac0c0000720d00006e0f0000981000009c1100000a120000181200007a13000052140000b615000000ca9a3bffffff7f
+    m_SelectedIDs: 44160000
+    m_LastClickedID: 5700
+    m_ExpandedIDs: 00000000140900006e0a0000ae0c0000740d0000700f00009c100000a01100000e1200001c120000841300005c140000c415000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -700,7 +700,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000120900006c0a0000ac0c0000720d00006e0f0000981000009c1100000a120000181200007a13000052140000b6150000
+    m_ExpandedIDs: 00000000140900006e0a0000ae0c0000740d0000700f00009c100000a01100000e1200001c120000841300005c140000c4150000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

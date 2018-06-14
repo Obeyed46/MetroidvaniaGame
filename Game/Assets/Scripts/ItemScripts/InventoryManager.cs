@@ -75,9 +75,8 @@ public class InventoryManager : MonoBehaviour
     {
         ConsumableItem app;
         app = (ConsumableItem)ConsumableItemSlots[ConsumableItemSlots.Length - 1].Item;
-        for(int i=1; i < ConsumableItemSlots.Length; i++)
+        for(int i=ConsumableItemSlots.Length-1;i>0;i--)
         {
-
             ConsumableItemSlots[i].Item = ConsumableItemSlots[i-1].Item;
         }
         ConsumableItemSlots[0].Item = app;
