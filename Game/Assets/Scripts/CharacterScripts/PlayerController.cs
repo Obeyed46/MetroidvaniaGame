@@ -63,12 +63,14 @@ public class PlayerController : MonoBehaviour
         if (MyRB.bodyType == RigidbodyType2D.Dynamic || MyRB.bodyType == RigidbodyType2D.Kinematic)
         {
             //Jumping
-            if (Grounded && Input.GetKeyDown("space") || Grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
-            {
-                Grounded = false;
-                MyRB.AddForce(new Vector2(0, JumpHeight));
-                MyAnim.SetBool("IsGrounded", Grounded);
+            if (!MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll")){
+                if (Grounded && Input.GetKeyDown("space") || Grounded && Input.GetKeyDown(KeyCode.Joystick1Button0))
+                {
+                    Grounded = false;
+                    MyRB.AddForce(new Vector2(0, JumpHeight));
+                    MyAnim.SetBool("IsGrounded", Grounded);
 
+                }
             }
             
 
