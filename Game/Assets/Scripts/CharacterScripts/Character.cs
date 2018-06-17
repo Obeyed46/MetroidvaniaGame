@@ -55,7 +55,6 @@ public class Character : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         Physics2D.IgnoreLayerCollision(8, 10);
     }
 		

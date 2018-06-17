@@ -219,12 +219,12 @@ public class PlayerController : MonoBehaviour
             }
           
             //Item shifts
-            if(Input.GetAxisRaw("DPadX") == 1 && timerBetweenShifts == 0)
+            if(Input.GetAxisRaw("DPadX") == -1 && timerBetweenShifts == 0)
             {
                 InventoryManager.Instance.ItemsArrayRightShift();
                 timerBetweenShifts = 0.2f;
             }
-            else if(Input.GetAxisRaw("DPadX") == -1 && timerBetweenShifts == 0)
+            else if(Input.GetAxisRaw("DPadX") == 1 && timerBetweenShifts == 0)
             {
                 InventoryManager.Instance.ItemsArrayLeftShift();
                 timerBetweenShifts = 0.2f;
