@@ -52,7 +52,8 @@ public class EnemyAI : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         
         if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
         {
