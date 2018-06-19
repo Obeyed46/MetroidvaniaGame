@@ -48,13 +48,13 @@ public class EnemyAI : MonoBehaviour {
         timer2 = 0;
 
 	}
-	
 
 
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        
+
         if (Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
         {
             Chase = false;
@@ -74,61 +74,59 @@ public class EnemyAI : MonoBehaviour {
         {
             SprintLeft = false;
             SprintRight = false;
-            Anim.SetBool("Attacking", false);
-            Anim.SetBool("Attacking2", false);
-            Anim.SetBool("Attacking3", false);
             Rb.velocity = new Vector2(0, 0);
         }
 
 
-        if(timer > 0)
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
         }
 
-        if(timer < 0)
+        if (timer < 0)
         {
             timer = 0;
         }
 
-        if(timer2 > 0)
+        if (timer2 > 0)
         {
             timer2 -= Time.deltaTime;
         }
 
-        if(timer2 < 0)
+        if (timer2 < 0)
         {
             timer2 = 0;
         }
 
 
-        if(CurrentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
         }
 
-        if(CurrentHealth < MaxHealth)
+        if (CurrentHealth < MaxHealth)
         {
             emptyBar.enabled = true;
             fullBar.enabled = true;
             yellowBar.enabled = true;
         }
 
-        if(yellowBar.transform.localScale.x > fullBar.transform.localScale.x)
+        if (yellowBar.transform.localScale.x > fullBar.transform.localScale.x)
         {
             yellowBar.transform.localScale = new Vector3(yellowBar.transform.localScale.x - 0.003f, yellowBar.transform.localScale.y, yellowBar.transform.localScale.z);
         }
 
-        if(fullBar.transform.localScale.x < 0)
+        if (fullBar.transform.localScale.x < 0)
         {
             fullBar.transform.localScale = new Vector3(0, fullBar.transform.localScale.y, fullBar.transform.localScale.z);
             yellowBar.transform.localScale = new Vector3(0, yellowBar.transform.localScale.y, yellowBar.transform.localScale.z);
         }
 
-        if(CurrentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Destroy(enemy);
         }
+
 	}
     
 
@@ -225,7 +223,6 @@ public class EnemyAI : MonoBehaviour {
               default:
                   break;
         }
-            
         Chase = false;
     }
 

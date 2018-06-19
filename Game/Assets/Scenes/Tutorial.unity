@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5211746}
   - component: {fileID: 5211747}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,8 +136,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5211745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -610.8, y: 106.9, z: 29.6875}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 1.0400025, y: -0.05, z: 29.6875}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 993572516}
   m_Father: {fileID: 631168912}
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300006, guid: 9df741a5336aec5438cfb3a47503368e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -939,8 +939,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378778287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -617.4, y: 139.6, z: 29.6875}
-  m_LocalScale: {x: -94.9999, y: 100, z: 1}
+  m_LocalPosition: {x: 0.37999877, y: 3.2199998, z: 29.6875}
+  m_LocalScale: {x: -9.499991, y: 10, z: 1}
   m_Children:
   - {fileID: 1280324751}
   - {fileID: 450793495}
@@ -2121,11 +2121,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 631168912}
-  - component: {fileID: 631168911}
   - component: {fileID: 631168913}
-  m_Layer: 0
+  - component: {fileID: 631168914}
+  - component: {fileID: 631168915}
+  - component: {fileID: 631168911}
+  m_Layer: 9
   m_Name: RockEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2142,7 +2144,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -619.6, y: 108.7}
+  m_Offset: {x: 0.15, y: 0.24}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2153,7 +2155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 39.7, y: 48.2}
+  m_Size: {x: 3.54, y: 4.73}
   m_EdgeRadius: 0
 --- !u!4 &631168912
 Transform:
@@ -2162,8 +2164,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631168910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1248.8, y: -224.3, z: -29.6875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 809.7, y: -117.2, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 1705167230}
   - {fileID: 5211746}
@@ -2193,7 +2195,66 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
+--- !u!95 &631168914
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631168910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2e7d60006fa9b84895f72a48a7b707c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &631168915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631168910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82308b05d1626c84b81a81ab18142fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Anim: {fileID: 0}
+  Rb: {fileID: 0}
+  target: {fileID: 0}
+  coll: {fileID: 0}
+  enemy: {fileID: 631168910}
+  emptyBar: {fileID: 378778289}
+  fullBar: {fileID: 1280324752}
+  yellowBar: {fileID: 450793496}
+  AggroDistance: 300
+  AttackDistance: 50
+  speed: 150
+  FacingRight: 0
+  timer: 0
+  timer2: 0
+  coolDown: 1
+  NumbOfPatterns: 2
+  weaponColl: {fileID: 1831235288}
+  MaxHealth: 800
+  CurrentHealth: 0
+  Poise: 0
+  PhysicDEF: 0
+  FireDEF: 0
+  EletricDEF: 0
+  MagicDEF: 0
+  PoisonDEF: 0
+  PhysicDamage: 50
+  FireDamage: 0
+  EletricDamage: 0
+  MagicDamage: 0
+  PoisonDamage: 0
 --- !u!1001 &672051273
 Prefab:
   m_ObjectHideFlags: 0
@@ -2427,7 +2488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730995663}
   - component: {fileID: 730995664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2441,8 +2502,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 730995662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -627.1, y: 91.7, z: 29.6875}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: -0.5899963, y: -1.570001, z: 29.6875}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 631168912}
   m_RootOrder: 3
@@ -3885,7 +3946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992755729}
   - component: {fileID: 992755730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3959,7 +4020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 993572516}
   - component: {fileID: 993572517}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4412,7 +4473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159884125}
   - component: {fileID: 1159884126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4426,8 +4487,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1159884124}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -610.6, y: 91.2, z: 29.6875}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 1.060004, y: -1.6199998, z: 29.6875}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 631168912}
   m_RootOrder: 4
@@ -5942,7 +6003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1705167230}
   - component: {fileID: 1705167231}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5956,8 +6017,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705167229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -619.7287, y: 110.6, z: 29.6875}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 0.1471314, y: 0.3199997, z: 29.6875}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 992755729}
   m_Father: {fileID: 631168912}
@@ -6073,7 +6134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714142839}
   - component: {fileID: 1714142840}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6087,8 +6148,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1714142838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -630.3, y: 106.4, z: 29.6875}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: -0.9099976, y: -0.1, z: 29.6875}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 631168912}
   m_RootOrder: 2
@@ -6483,7 +6544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1831235287}
   - component: {fileID: 1831235288}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeaponCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
