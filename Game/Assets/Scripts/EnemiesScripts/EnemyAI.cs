@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour {
     public SpriteRenderer emptyBar, fullBar, yellowBar;
     
     //Movement variables
-    public float MaxDistance, speed;
+    public float AggroDistance, AttackDistance, speed;
     public bool FacingRight;
     bool SprintRight, SprintLeft, CanFlip, Chase;
     
@@ -137,7 +137,7 @@ public class EnemyAI : MonoBehaviour {
     {
         if (target != null)
         {
-            if (Vector2.Distance(transform.position, target.position) < 300 && Vector2.Distance(transform.position, target.position) > 50 && Chase && timer2 == 0)
+            if (Vector2.Distance(transform.position, target.position) < AggroDistance && Vector2.Distance(transform.position, target.position) > AttackDistance && Chase && timer2 == 0)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
                 Anim.SetFloat("speed", 1);
