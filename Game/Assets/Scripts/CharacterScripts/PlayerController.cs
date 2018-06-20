@@ -340,6 +340,8 @@ public class PlayerController : MonoBehaviour
         {
             currentItem = (ConsumableItem)InventoryManager.Instance.ConsumableItemSlots[0].Item;
             StatsSystem.Instance.GainHealth(currentItem.HealthIncrease);
+            currentItem.numbOfItems--;
+            InventoryManager.Instance.ConsumableItemSlots[0].Item = currentItem;
         }
         else
         {

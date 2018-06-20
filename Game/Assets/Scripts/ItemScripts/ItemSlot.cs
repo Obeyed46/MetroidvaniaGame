@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour, IPointerClickHandler {
 
     [SerializeField] Image image;
+    public Text NumbOfItems;
 
     private Item _item;
 
@@ -24,6 +25,40 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
             else
             { 
                 image.sprite = _item.Icon;
+                image.enabled = true;
+            }
+        }
+
+    }
+
+    void Start()
+    {
+        NumbOfItems = GetComponentInChildren<Text>();
+    }
+
+    void Update()
+    {
+        if(_item is EquippableItem || _item == null)
+        {
+            NumbOfItems.enabled = false;
+        }
+        else if(_item is ConsumableItem)
+        {
+            NumbOfItems.enabled = true;
+            ConsumableItem help;
+            help = (ConsumableItem)_item;
+            NumbOfItems.text = help.numbOfItems.ToString();
+            if(help.numbOfItems == 0)
+            {
+                _item = null;
+            }
+
+            if(_item == null)
+            {
+                image.enabled = false;
+            }
+            else
+            {
                 image.enabled = true;
             }
         }
@@ -50,5 +85,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
             image = GetComponent<Image>();
         }
     }
+    
 
 }
