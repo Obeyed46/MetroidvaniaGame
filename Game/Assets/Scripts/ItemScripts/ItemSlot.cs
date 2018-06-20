@@ -36,13 +36,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
         NumbOfItems = GetComponentInChildren<Text>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if(_item is EquippableItem || _item == null)
-        {
-            NumbOfItems.enabled = false;
-        }
-        else if(_item is ConsumableItem)
+        if(_item is ConsumableItem)
         {
             NumbOfItems.enabled = true;
             ConsumableItem help;
@@ -52,15 +48,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
             {
                 _item = null;
             }
+        }
+        else
+        {
+            NumbOfItems.enabled = false;
+        }
 
-            if(_item == null)
-            {
-                image.enabled = false;
-            }
-            else
-            {
-                image.enabled = true;
-            }
+        if (_item == null)
+        {
+            image.enabled = false;
+        }
+        else
+        {
+            image.enabled = true;
         }
 
     }
