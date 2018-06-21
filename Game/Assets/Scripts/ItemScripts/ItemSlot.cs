@@ -37,30 +37,30 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler {
     }
 
     void FixedUpdate()
-    {
-        if(_item is ConsumableItem)
-        {
-            NumbOfItems.enabled = true;
-            ConsumableItem help;
-            help = (ConsumableItem)_item;
-            NumbOfItems.text = help.numbOfItems.ToString();
-            if(help.numbOfItems == 0)
-            {
-                _item = null;
-            }
-        }
-        else
-        {
-            NumbOfItems.enabled = false;
-        }
-
+    {   
         if (_item == null)
         {
             image.enabled = false;
+            NumbOfItems.enabled = false;
         }
-        else
+        else if(_item != null)
         {
             image.enabled = true;
+            if (_item is ConsumableItem)
+            {
+                NumbOfItems.enabled = true;
+                ConsumableItem help;
+                help = (ConsumableItem)_item;
+                NumbOfItems.text = help.numbOfItems.ToString();
+                if (help.numbOfItems == 0)
+                {
+                    _item = null;
+                }
+            }
+            else if(_item is EquippableItem)
+            {
+                NumbOfItems.enabled = false;
+            }
         }
 
     }
