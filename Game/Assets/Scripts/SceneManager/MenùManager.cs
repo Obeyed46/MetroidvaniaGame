@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MenùManager : MonoBehaviour {
 
-    public Canvas InventoryMenu, StatsMenu;
+    public Canvas InventoryMenu, StatsMenu, HUD;
     public static MenùManager Instance;
 
 	// Use this for initialization
@@ -63,5 +63,13 @@ public class MenùManager : MonoBehaviour {
 
         }
 
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if(level == 2)
+        {
+            HUD.enabled = true;
+        }
     }
 }
