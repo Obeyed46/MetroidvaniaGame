@@ -3671,7 +3671,7 @@ MonoBehaviour:
   FacingRight: 0
   timer: 0
   timer2: 0
-  coolDown: 2
+  coolDown: 1.5
   NumbOfPatterns: 3
   weaponColl: {fileID: 737043027}
   MaxHealth: 1000
