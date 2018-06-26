@@ -285,12 +285,12 @@ public class PlayerController : MonoBehaviour
 
             if (SprintRight)
             {
-                MyRB.velocity = new Vector2(100, MyRB.velocity.y);
+                MyRB.velocity = new Vector2(160, MyRB.velocity.y);
             }
 
             if (SprintLeft)
             {
-                MyRB.velocity = new Vector2(-100, MyRB.velocity.y);
+                MyRB.velocity = new Vector2(-160, MyRB.velocity.y);
             }
             
             if (Rolling)
