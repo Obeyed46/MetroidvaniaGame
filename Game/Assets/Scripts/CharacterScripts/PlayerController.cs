@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
 
 
             //Attacking
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run1") == false)
+            if (!MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Falling"))
             {
 
                 if (Input.GetMouseButtonDown(0) && StatsSystem.Instance.CurrentStamina > 10 && Timer2 == 0 && Timer3 == 0 && CanClick || Input.GetKeyDown(KeyCode.Joystick1Button2) && StatsSystem.Instance.CurrentStamina > 0 && Timer2 == 0 && Timer3 == 0 && CanClick)
