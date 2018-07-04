@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 53
+  controlID: 122
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -367,21 +367,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 24090000
     m_LastClickedID: 0
-    m_ExpandedIDs: 3ab1ffffa4c3ffff3edcffffe4f6fffff0fbffff00000000
+    m_ExpandedIDs: 8273fcffd280fcffea9ffcff7cd3fcfff829fdff0ac8fdff92d8fdff9023feffd82ffeff480dffffcc19ffff9225ffff06f8fffff0fbffff000000001c5e0000c27d0000309300005ce3000056e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ForestGround (1)
+      m_OriginalName: ForestGround (1)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -124038
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1083.6603, y: 78.21235, z: -1.1064745}
+    m_Target: {x: 5.495178, y: -70.47899, z: 1.0794226}
     speed: 2
-    m_Value: {x: 1083.6603, y: 78.21235, z: -1.1064745}
+    m_Value: {x: 5.495178, y: -70.47899, z: 1.0794226}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -456,9 +456,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 735.5498
+    m_Target: 560.0968
     speed: 2
-    m_Value: 735.5498
+    m_Value: 560.0968
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -703,24 +703,24 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 6}
-    m_SelectedIDs: 00120000
-    m_LastClickedID: 4608
-    m_ExpandedIDs: 00000000120900007e0a0000a60d0000ca0d0000640f0000be0f0000ec1000000c1200007a1200008a120000081400003c14000058140000e41400001c1500005016000088160000863d000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 126}
+    m_SelectedIDs: 04120000
+    m_LastClickedID: 4612
+    m_ExpandedIDs: 00000000120900007e0a0000aa0d0000ce0d0000680f0000c20f0000f0100000101200007e1200008e1200000c140000401400005c140000e81400002015000058160000901600008e3d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Sprites
+      m_OriginalName: Sprites
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 3498
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -734,7 +734,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000120900007e0a0000a60d0000ca0d0000640f0000be0f0000ec1000000c1200007a1200008a120000081400003c14000058140000e41400001c1500005016000088160000863d0000
+    m_ExpandedIDs: 00000000120900007e0a0000aa0d0000ce0d0000680f0000c20f0000f0100000101200007e1200008e1200000c140000401400005c140000e81400002015000058160000901600008e3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -762,7 +762,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe380000000000001845000028450000f25b00005a3d0000d83f000026400000
+    m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe380000000000001845000028450000f25b00005a3d0000d83f000026400000ba410000c0410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
