@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour {
     bool SprintRight, SprintLeft, CanFlip, Chase;
     
     //Attacking variables
-    public float timer, timer2, coolDown = 0.7f;      //Timer = AttackDelay, Timer2 = delay between attack and run
+    public float timer, timer2, RunDelay, coolDown = 0.7f;      //Timer = AttackDelay, Timer2 = delay between attack and run RunDelay = effectrive delay between attack and run
     public int NumbOfPatterns; //Number attacks of the mob
     public Collider2D weaponColl;
 
@@ -262,7 +262,7 @@ public class EnemyAI : MonoBehaviour {
 
     public void RunDelayAfterAttack()
     {
-        timer2 = 0.5f;
+        timer2 = RunDelay;
     }
 
     public void AttackSprint()
