@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour {
     public GameObject enemy;
 
     //HealthBars variables
-    public SpriteRenderer emptyBar, fullBar, yellowBar;
+    public SpriteRenderer emptyBar, fullBar, yellowBar, Decorations, Decorations2;
     
     //Movement variables
     public float AggroDistance, AttackDistance, speed;
@@ -109,6 +109,8 @@ public class EnemyAI : MonoBehaviour {
             emptyBar.enabled = true;
             fullBar.enabled = true;
             yellowBar.enabled = true;
+            Decorations.enabled = true;
+            Decorations2.enabled = true;
         }
 
         if (yellowBar.transform.localScale.x > fullBar.transform.localScale.x)
