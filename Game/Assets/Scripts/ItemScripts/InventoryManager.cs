@@ -141,6 +141,9 @@ public class InventoryManager : MonoBehaviour
                         Character.Instance.Weapon1Sprite.sprite = EquipItem.Icon;
                         CreatePlayer.Instance.Weapon1Dam = EquipItem.PhysicDamage + EquipItem.FireDamage + EquipItem.EletricDamage + EquipItem.MagicDamage + EquipItem.PoisonDamage;
                         break;
+                    case EquipmentType.Weapon2:
+                        Character.Instance.Weapon2Sprite.sprite = EquipItem.Icon;
+                        break;
                     case EquipmentType.Legs:
                         Character.Instance.LegsSprite1.sprite = EquipItem.Sprite1;
                         Character.Instance.LegsSprite2.sprite = EquipItem.Sprite2;
@@ -152,20 +155,27 @@ public class InventoryManager : MonoBehaviour
                     Character.Instance.Anim.SetLayerWeight(EquipItem.AnimLayer, 1.0f);
 
                 }
-                CreatePlayer.Instance.PhysicDEF += EquipItem.PhysicDEF;
-                CreatePlayer.Instance.FireDEF += EquipItem.FireDEF;
-                CreatePlayer.Instance.EletricDEF += EquipItem.EletricDEF;     //Adding new item's values
-                CreatePlayer.Instance.MagicDEF += EquipItem.MagicDEF;
-                CreatePlayer.Instance.PoisonDEF += EquipItem.PoisonDEF;
+                if (EquipItem.EquipmentType != EquipmentType.Weapon2)
+                {
+                    CreatePlayer.Instance.PhysicDEF += EquipItem.PhysicDEF;
+                    CreatePlayer.Instance.FireDEF += EquipItem.FireDEF;
+                    CreatePlayer.Instance.EletricDEF += EquipItem.EletricDEF;     //Adding new item's values
+                    CreatePlayer.Instance.MagicDEF += EquipItem.MagicDEF;
+                    CreatePlayer.Instance.PoisonDEF += EquipItem.PoisonDEF;
+                   // CreatePlayer.Instance.Weight += EquipItem.Weight;
+                }
                 CreatePlayer.Instance.Weight += EquipItem.Weight;
                 //CreatePlayer.Instance.UpdateUI();
                 if (previousItem != null)
                 {
-                    CreatePlayer.Instance.PhysicDEF -= previousItem.PhysicDEF;
-                    CreatePlayer.Instance.FireDEF -= previousItem.FireDEF;
-                    CreatePlayer.Instance.EletricDEF -= previousItem.EletricDEF;      //Removing previous item's values
-                    CreatePlayer.Instance.MagicDEF -= previousItem.MagicDEF;
-                    CreatePlayer.Instance.PoisonDEF -= previousItem.PoisonDEF;
+                    if (previousItem.EquipmentType != EquipmentType.Weapon2)
+                    {
+                        CreatePlayer.Instance.PhysicDEF -= previousItem.PhysicDEF;
+                        CreatePlayer.Instance.FireDEF -= previousItem.FireDEF;
+                        CreatePlayer.Instance.EletricDEF -= previousItem.EletricDEF;      //Removing previous item's values
+                        CreatePlayer.Instance.MagicDEF -= previousItem.MagicDEF;
+                        CreatePlayer.Instance.PoisonDEF -= previousItem.PoisonDEF;
+                    }
                     CreatePlayer.Instance.Weight -= previousItem.Weight;
                     if(previousItem.AnimLayer != 0)
                     {
@@ -197,6 +207,9 @@ public class InventoryManager : MonoBehaviour
                 case EquipmentType.Weapon1:
                     CreatePlayer.Instance.SetHandDamage();
                     Character.Instance.Weapon1Sprite.sprite = null;
+                    break;
+                case EquipmentType.Weapon2:
+                    Character.Instance.Weapon2Sprite.sprite = null;
                     break;
                 case EquipmentType.Head:
                     Character.Instance.Hair.enabled = true;
@@ -232,11 +245,15 @@ public class InventoryManager : MonoBehaviour
                 Character.Instance.Anim.SetLayerWeight(equipItem.AnimLayer, 0.0f);
 
             }
-            CreatePlayer.Instance.PhysicDEF -= equipItem.PhysicDEF;
-            CreatePlayer.Instance.FireDEF -= equipItem.FireDEF;
-            CreatePlayer.Instance.EletricDEF -= equipItem.EletricDEF;
-            CreatePlayer.Instance.MagicDEF -= equipItem.MagicDEF;
-            CreatePlayer.Instance.PoisonDEF -= equipItem.PoisonDEF;
+            if (equipItem.EquipmentType != EquipmentType.Weapon2)
+            {
+                CreatePlayer.Instance.PhysicDEF -= equipItem.PhysicDEF;
+                CreatePlayer.Instance.FireDEF -= equipItem.FireDEF;
+                CreatePlayer.Instance.EletricDEF -= equipItem.EletricDEF;
+                CreatePlayer.Instance.MagicDEF -= equipItem.MagicDEF;
+                CreatePlayer.Instance.PoisonDEF -= equipItem.PoisonDEF;
+                //CreatePlayer.Instance.Weight -= equipItem.Weight;
+            }
             CreatePlayer.Instance.Weight -= equipItem.Weight;
             CreatePlayer.Instance.UpdateUI();
             inventory.AddItem(equipItem);

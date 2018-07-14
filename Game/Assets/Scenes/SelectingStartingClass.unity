@@ -5681,7 +5681,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509572548}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5694,7 +5694,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 47bd08b28b5c3d3409639c962e413bae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2072a3a43845ad545aad702a315ffc9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12129,6 +12129,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f56a6363d1a9fb4f8c597fe84f35eb9, type: 2}
   - {fileID: 11400000, guid: d079c737756a23445be0d6ef926c8840, type: 2}
   - {fileID: 11400000, guid: 8b382aca7594a1d4a99578ddbb3a868e, type: 2}
+  - {fileID: 11400000, guid: 990156fd2e793c44e80f1d92533a4e4a, type: 2}
   itemsParent: {fileID: 662395448}
   itemSlots:
   - {fileID: 1685012934}
@@ -14083,6 +14084,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6629bd0af621e2943a7fe2e1a90f1397, type: 2}
   - {fileID: 11400000, guid: d32021bba5679194981fe03a7c0fe0db, type: 2}
   - {fileID: 11400000, guid: 9669af2b63402154e8f31b7bcad8cfe3, type: 2}
+  - {fileID: 11400000, guid: 990156fd2e793c44e80f1d92533a4e4a, type: 2}
 --- !u!1 &1480441053
 GameObject:
   m_ObjectHideFlags: 0
