@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     int noOfClicks;
     bool CanClick;
     public bool SprintRight, SprintLeft, Rolling, CanCollide;
-    public float coolDown = 0.6f, Timer2, Timer3;
+    public float coolDown = 0.8f, Timer2, Timer3;
 
     //Items variables
     float timerBetweenShifts;
@@ -182,6 +182,16 @@ public class PlayerController : MonoBehaviour
 
             }
 
+            //Use Shield
+            if(Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                MyAnim.SetBool("Shield", true);
+            }
+            else if(Input.GetAxisRaw("RightTrigger") == 0)
+            {
+                MyAnim.SetBool("Shield", false);
+            }
+
             //Disable collision with enemies during the roll
             if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
             {
@@ -196,7 +206,7 @@ public class PlayerController : MonoBehaviour
 
 
             //Do not walk or run during other animations and actions
-            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+            if (MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Roll") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack3") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("HeavyAttack") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Stagger") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("ShieldIdle") || MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
             {
                 CanMove = false;
             }
@@ -247,6 +257,8 @@ public class PlayerController : MonoBehaviour
 
         if (MyRB.bodyType == RigidbodyType2D.Dynamic)
         {
+
+            //Walk
             MyAnim.SetBool("IsRunning", false);
             float move = Input.GetAxis("Horizontal");
             MyAnim.SetFloat("Speed", Mathf.Abs(move));
@@ -268,7 +280,9 @@ public class PlayerController : MonoBehaviour
           
             StatsSystem.Instance.CurrentStamina += 1;
             
-            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 || Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0)
+
+            //Run
+            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove|| Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove)
             {
 
                 MyRB.velocity = new Vector2(move * RunningSpeed, MyRB.velocity.y);
@@ -276,6 +290,7 @@ public class PlayerController : MonoBehaviour
                 StatsSystem.Instance.CurrentStamina -= 3;
 
             }
+
 
             //Cheking if Grounded
             Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, GroundLayer);
