@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     //Variables//
 
     //Walk_Run variables
-    public float MaxSpeed, RunningSpeed;
+    public float MaxSpeed, RunningSpeed, ShieldedSpeed;
     public Rigidbody2D MyRB;
     public Animator MyAnim;
     public Collider2D coll;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     //Attacking Variables
     int noOfClicks;
     bool CanClick;
-    public bool SprintRight, SprintLeft, Rolling, CanCollide;
+    public bool SprintRight, SprintLeft, Rolling, CanCollide, Shielded;
     public float coolDown = 0.8f, Timer2, Timer3;
 
     //Items variables
@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         CanClick = true;
         CanMove = true;
         CanCollide = true;
+        Shielded = false;
         timerBetweenShifts = 0f;
 
     }
@@ -183,13 +184,16 @@ public class PlayerController : MonoBehaviour
             }
 
             //Use Shield
-            if(Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            if(Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
             {
                 MyAnim.SetBool("Shield", true);
+                MyRB.velocity = new Vector2(0, MyRB.velocity.y);
+                Shielded = true;
             }
             else if(Input.GetAxisRaw("RightTrigger") == 0)
             {
                 MyAnim.SetBool("Shield", false);
+                Shielded = false;
             }
 
             //Disable collision with enemies during the roll
@@ -276,21 +280,26 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-
-          
             StatsSystem.Instance.CurrentStamina += 1;
-            
-
+           
             //Run
-            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove|| Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove)
+            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove && !Shielded|| Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove && !Shielded)
             {
-
                 MyRB.velocity = new Vector2(move * RunningSpeed, MyRB.velocity.y);
                 MyAnim.SetBool("IsRunning", true);
                 StatsSystem.Instance.CurrentStamina -= 3;
-
             }
 
+            //ShieldWalk
+            if(Shielded && move != 0)
+            {
+                MyRB.velocity = new Vector2(move * ShieldedSpeed, MyRB.velocity.y);
+                MyAnim.SetBool("ShieldWalk", true);
+            }
+            else
+            {
+                MyAnim.SetBool("ShieldWalk", false);
+            }
 
             //Cheking if Grounded
             Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, GroundLayer);

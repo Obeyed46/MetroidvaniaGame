@@ -102,6 +102,17 @@ public class StatsSystem : MonoBehaviour {
         UpdateUI();
     }
 
+    public void ShieldTakeDamage(int damage)
+    {
+        float MaxHealht = CreatePlayer.Instance.HealthPoints;
+        EquippableItem Shield = (EquippableItem)EquipmentPanel.Instance.EquipSlots[5].Item;
+        int ShieldDef = damage - (damage * Shield.PhysicDEF) / 100;
+        CurrentHealht -= ShieldDef;
+        float Dam = ShieldDef;
+        HealthBarImage.transform.localScale = new Vector3(HealthBarImage.transform.localScale.x - (Dam / MaxHealht), HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
+        UpdateUI();
+    }
+
     public void GainHealth(int healthIncrease)
     {
         float MaxHealht = CreatePlayer.Instance.HealthPoints;

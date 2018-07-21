@@ -17,6 +17,7 @@ public class Character : MonoBehaviour {
 
     public BoxCollider2D weaponCollider;
     public BoxCollider2D playerCollider;
+    public BoxCollider2D shieldCollider;
 
 
     public static string PlayerName { get; set; }
