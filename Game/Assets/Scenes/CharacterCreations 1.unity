@@ -9061,8 +9061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1832600179}
-  MaxSpeed: 150
-  RunningSpeed: 200
+  MaxSpeed: 200
   ShieldedSpeed: 130
   MyRB: {fileID: 0}
   MyAnim: {fileID: 0}

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     //Variables//
 
     //Walk_Run variables
-    public float MaxSpeed, RunningSpeed, ShieldedSpeed;
+    public float MaxSpeed, ShieldedSpeed;
     public Rigidbody2D MyRB;
     public Animator MyAnim;
     public Collider2D coll;
@@ -281,15 +281,7 @@ public class PlayerController : MonoBehaviour
             }
 
             StatsSystem.Instance.CurrentStamina += 1;
-           
-            //Run
-            if (Input.GetKey(KeyCode.LeftShift) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove && !Shielded|| Input.GetKey(KeyCode.Joystick1Button4) && move != 0 && StatsSystem.Instance.CurrentStamina > 0 && CanMove && !Shielded)
-            {
-                MyRB.velocity = new Vector2(move * RunningSpeed, MyRB.velocity.y);
-                MyAnim.SetBool("IsRunning", true);
-                StatsSystem.Instance.CurrentStamina -= 3;
-            }
-
+          
             //ShieldWalk
             if(Shielded && move != 0)
             {
