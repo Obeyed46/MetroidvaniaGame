@@ -195,6 +195,7 @@ public class EnemyAI : MonoBehaviour {
         if(Physics2D.IsTouching(weaponColl, Character.Instance.playerCollider))
         {
             Physics2D.IgnoreLayerCollision(0, 11, true);
+            Physics2D.IgnoreLayerCollision(11, 12, true);
             StatsSystem.Instance.TakeDamage(PhysicDamage);
         }
         else if(Physics2D.IsTouching(weaponColl, Character.Instance.shieldCollider))
