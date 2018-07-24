@@ -100,6 +100,7 @@ public class StatsSystem : MonoBehaviour {
         CurrentHealht -= damage;
         HealthBarImage.transform.localScale = new Vector3(HealthBarImage.transform.localScale.x - (Dam/MaxHealht), HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
         UpdateUI();
+        Instantiate(Character.Instance.bloodEffect, Character.Instance.transform.position, Quaternion.identity);
     }
 
     public void ShieldTakeDamage(int damage)

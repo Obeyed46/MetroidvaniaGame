@@ -9149,6 +9149,8 @@ MonoBehaviour:
   weaponCollider: {fileID: 132757131}
   playerCollider: {fileID: 1832600180}
   shieldCollider: {fileID: 1726434173}
+  bloodEffect: {fileID: 1399971832031136, guid: 76e65c28a7715164a9e12914940614b3,
+    type: 2}
 --- !u!4 &1832600185
 Transform:
   m_ObjectHideFlags: 0

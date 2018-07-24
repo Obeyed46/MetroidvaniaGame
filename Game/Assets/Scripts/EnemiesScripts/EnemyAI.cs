@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour {
     public float timer, timer2, RunDelay, coolDown = 0.7f;      //Timer = AttackDelay, Timer2 = delay between attack and run RunDelay = effectrive delay between attack and run
     public int NumbOfPatterns; //Number attacks of the mob
     public Collider2D weaponColl;
+    public GameObject hitEffect;
 
     //Stats
     public int MaxHealth, CurrentHealth, Poise, PhysicDEF, FireDEF, EletricDEF, MagicDEF, PoisonDEF;  //DEF stats
@@ -250,9 +251,9 @@ public class EnemyAI : MonoBehaviour {
         {
             CurrentHealth -= CreatePlayer.Instance.Weapon1Dam;
         }
-
         float wDam = PlayerWeapon.PhysicDamage, MaxHeatlh = MaxHealth;
         fullBar.transform.localScale = new Vector3(fullBar.transform.localScale.x - (wDam / MaxHealth), fullBar.transform.localScale.y, fullBar.transform.localScale.z);
+        Instantiate(hitEffect, transform.position, Quaternion.identity);
 
 
 

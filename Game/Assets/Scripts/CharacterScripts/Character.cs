@@ -19,6 +19,8 @@ public class Character : MonoBehaviour {
     public BoxCollider2D playerCollider;
     public BoxCollider2D shieldCollider;
 
+    public GameObject bloodEffect;
+
 
     public static string PlayerName { get; set; }
     public static int PlayerLevel { get; set; }

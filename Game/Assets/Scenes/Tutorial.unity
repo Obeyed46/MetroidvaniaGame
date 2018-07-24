@@ -291,6 +291,7 @@ MonoBehaviour:
   coolDown: 0.8
   NumbOfPatterns: 2
   weaponColl: {fileID: 1523469906}
+  hitEffect: {fileID: 1654319058606806, guid: eed9b725abfa7a94f8deac4627e8b948, type: 2}
   MaxHealth: 300
   CurrentHealth: 0
   Poise: 0
@@ -3087,6 +3088,7 @@ MonoBehaviour:
   coolDown: 1
   NumbOfPatterns: 2
   weaponColl: {fileID: 1831235288}
+  hitEffect: {fileID: 1520561014401996, guid: 99f5ad98ab856034fb43ae6ed1c81c97, type: 2}
   MaxHealth: 800
   CurrentHealth: 0
   Poise: 0
@@ -5079,6 +5081,7 @@ MonoBehaviour:
   coolDown: 1.5
   NumbOfPatterns: 3
   weaponColl: {fileID: 737043027}
+  hitEffect: {fileID: 1520561014401996, guid: 99f5ad98ab856034fb43ae6ed1c81c97, type: 2}
   MaxHealth: 1000
   CurrentHealth: 0
   Poise: 0
@@ -6448,6 +6451,7 @@ MonoBehaviour:
   coolDown: 0.8
   NumbOfPatterns: 2
   weaponColl: {fileID: 380587344}
+  hitEffect: {fileID: 1654319058606806, guid: eed9b725abfa7a94f8deac4627e8b948, type: 2}
   MaxHealth: 300
   CurrentHealth: 0
   Poise: 0

@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 81
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 61
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 62
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -365,9 +365,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 7a110000
     m_LastClickedID: 0
-    m_ExpandedIDs: 4ebef4ff52d3f4fff2cbf6ff6cddf6fffe31f7ffa444f7ff5e60fffff0fbffff00000000
+    m_ExpandedIDs: 7e27f0ffe4caf0ff94fcf0ffca0ff1ff6cfaf8fffcfbf8ff782cf9ffd235fdff4854fdfff0fbffff000000005a3f0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -386,7 +386,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Tutorial
+  - CharacterCreations 1
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 406.80417, y: -158.99725, z: -2.593463}
+    m_Target: {x: 3.9290354, y: 3.60395, z: 0.7565534}
     speed: 2
-    m_Value: {x: 406.80417, y: -158.99725, z: -2.593463}
+    m_Value: {x: 3.9290354, y: 3.60395, z: 0.7565534}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -456,9 +456,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 351.90833
+    m_Target: 242.25061
     speed: 2
-    m_Value: 351.90833
+    m_Value: 242.25061
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -710,20 +710,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/PreFab/Effects
+    - Assets/Sprites/Effects
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/PreFab/Effects
+  - Assets/Sprites/Effects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 38}
-    m_SelectedIDs: 22f80000
-    m_LastClickedID: 63522
-    m_ExpandedIDs: 0000000014090000820a0000b60d0000da0d00007a0f0000d40f000010110000301200009e120000ae120000381400006c1400008814000014150000561500008e160000ca160000043e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 198}
+    m_SelectedIDs: fc0f0000
+    m_LastClickedID: 4092
+    m_ExpandedIDs: 0000000012090000800a0000b40d0000d80d0000780f0000d20f00000e110000301200009e120000ae120000381400006c14000088140000141500005615000090160000cc160000823d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -751,7 +751,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000014090000820a0000b60d0000da0d00007a0f0000d40f000010110000301200009e120000ae120000381400006c1400008814000014150000561500008e160000ca160000043e0000
+    m_ExpandedIDs: 0000000012090000800a0000b40d0000d80d0000780f0000d20f00000e110000301200009e120000ae120000381400006c14000088140000141500005615000090160000cc160000823d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -779,7 +779,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe3800001845000028450000f25b00005a3d0000d83f000026400000ba410000c041000006400000681100009e6b000074110000540b000000000000
+    m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe3800001845000028450000f25b00005a3d0000d83f000026400000ba410000c041000006400000681100009e6b000074110000540b000000000000ae170000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -795,7 +795,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
