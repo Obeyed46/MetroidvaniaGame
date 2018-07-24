@@ -5,21 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour {
  
+    //General
     public Rigidbody2D MyRB;
-    //public StatsSystem statsSystem;
     public Animator Anim;
     
-
+    //Instance
     public static Character Instance;
 
+    //Sprites
     public SpriteRenderer HeadSprite, ChestSprite,ChestSprite1,ChestSprite2, HandsSprite1,HandsSprite2, LegsSprite1,LegsSprite2,LegsSprite3, Weapon1Sprite, Weapon2Sprite, Accessory1Sprite, Accessory2Sprite;
     public SpriteRenderer Hair;
 
+    //Colliders
     public BoxCollider2D weaponCollider;
     public BoxCollider2D playerCollider;
     public BoxCollider2D shieldCollider;
 
-    public GameObject bloodEffect;
+    //Effects
+    public GameObject bloodEffect, shieldHitEffect;
 
 
     public static string PlayerName { get; set; }

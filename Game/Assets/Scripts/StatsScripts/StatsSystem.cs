@@ -112,6 +112,7 @@ public class StatsSystem : MonoBehaviour {
         float Dam = ShieldDef;
         HealthBarImage.transform.localScale = new Vector3(HealthBarImage.transform.localScale.x - (Dam / MaxHealht), HealthBarImage.transform.localScale.y, HealthBarImage.transform.localScale.z);
         UpdateUI();
+        Instantiate(Character.Instance.shieldHitEffect, Character.Instance.transform.position, Quaternion.identity);
     }
 
     public void GainHealth(int healthIncrease)

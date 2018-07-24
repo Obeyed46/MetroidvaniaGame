@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 10
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 12
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 13
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,9 +364,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2070000
+    m_SelectedIDs: 26090000
     m_LastClickedID: 0
-    m_ExpandedIDs: 8c4bedffa655edff1882edffd45aeefff0fbffff00000000
+    m_ExpandedIDs: e090f4ff529af4fff0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -421,9 +421,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -23.513292, y: 21.952503, z: 1.5229329}
+    m_Target: {x: -87.72464, y: 9.753071, z: 1.0508608}
     speed: 2
-    m_Value: {x: -23.513292, y: 21.952503, z: 1.5229329}
+    m_Value: {x: -87.72464, y: 9.753071, z: 1.0508608}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -455,9 +455,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 169.80557
+    m_Target: 214.07417
     speed: 2
-    m_Value: 169.80557
+    m_Value: 214.07417
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -529,7 +529,6 @@ MonoBehaviour:
     - {fileID: 1107983309005359748, guid: c2e7d60006fa9b84895f72a48a7b707c, type: 2}
     - {fileID: 1107816084353114334, guid: 4fd6ced9720f88e4ba754d0943f90770, type: 2}
     - {fileID: 1107868838500598950, guid: 75ad689201d7f3c4d8c10dd38a2a250a, type: 2}
-    - {fileID: 1107739265049712624, guid: 8ea77c39d74bf2f4b9ccc9e7a5ab8520, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -659,22 +658,6 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 0}
   m_BreadCrumbs: []
@@ -726,19 +709,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/PreFab
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/PreFab
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 70}
-    m_SelectedIDs: 9a160000
-    m_LastClickedID: 5786
+    m_SelectedIDs: 2e120000
+    m_LastClickedID: 4654
     m_ExpandedIDs: 0000000014090000820a0000ba0d0000de0d0000800f0000da0f0000181100003a120000a8120000b81200004214000076140000921400001e150000601500009a160000d61600001c3e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -794,7 +777,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe3800001845000028450000f25b00005a3d0000d83f000026400000ba410000c041000006400000681100009e6b000074110000540b000000000000ae170000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -3088,7 +3088,7 @@ MonoBehaviour:
   coolDown: 1
   NumbOfPatterns: 2
   weaponColl: {fileID: 1831235288}
-  hitEffect: {fileID: 1520561014401996, guid: 99f5ad98ab856034fb43ae6ed1c81c97, type: 2}
+  hitEffect: {fileID: 1731284891098654, guid: 0713e3cdab1a74340a88bea16b732c5d, type: 2}
   MaxHealth: 800
   CurrentHealth: 0
   Poise: 0
@@ -4504,9 +4504,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de3a6a6ff0000644bf54acdcfdec6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camAnim: {fileID: 0}
   playerTransform: {fileID: 0}
   smoothTime: 0.3
+  shakeTimer: 0
+  shakeAmount: 0
 --- !u!1 &861999643
 GameObject:
   m_ObjectHideFlags: 0
