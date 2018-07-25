@@ -6456,7 +6456,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1654319058606806, guid: eed9b725abfa7a94f8deac4627e8b948, type: 2}
   MaxHealth: 300
   CurrentHealth: 0
-  Poise: 5
+  Poise: 7
   PhysicDEF: 0
   FireDEF: 0
   EletricDEF: 0
