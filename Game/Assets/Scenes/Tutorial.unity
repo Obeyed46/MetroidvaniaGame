@@ -294,7 +294,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1654319058606806, guid: eed9b725abfa7a94f8deac4627e8b948, type: 2}
   MaxHealth: 300
   CurrentHealth: 0
-  Poise: 0
+  Poise: 5
   PhysicDEF: 0
   FireDEF: 0
   EletricDEF: 0
@@ -3091,7 +3091,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1731284891098654, guid: 0713e3cdab1a74340a88bea16b732c5d, type: 2}
   MaxHealth: 800
   CurrentHealth: 0
-  Poise: 0
+  Poise: 4
   PhysicDEF: 0
   FireDEF: 0
   EletricDEF: 0
@@ -5086,7 +5086,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1520561014401996, guid: 99f5ad98ab856034fb43ae6ed1c81c97, type: 2}
   MaxHealth: 1000
   CurrentHealth: 0
-  Poise: 0
+  Poise: 3
   PhysicDEF: 0
   FireDEF: 0
   EletricDEF: 0
@@ -6456,7 +6456,7 @@ MonoBehaviour:
   hitEffect: {fileID: 1654319058606806, guid: eed9b725abfa7a94f8deac4627e8b948, type: 2}
   MaxHealth: 300
   CurrentHealth: 0
-  Poise: 0
+  Poise: 5
   PhysicDEF: 0
   FireDEF: 0
   EletricDEF: 0

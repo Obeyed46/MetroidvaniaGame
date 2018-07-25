@@ -254,6 +254,14 @@ public class EnemyAI : MonoBehaviour {
         float wDam = PlayerWeapon.PhysicDamage, MaxHeatlh = MaxHealth;
         fullBar.transform.localScale = new Vector3(fullBar.transform.localScale.x - (wDam / MaxHealth), fullBar.transform.localScale.y, fullBar.transform.localScale.z);
         Instantiate(hitEffect, transform.position, Quaternion.identity);
+        if (FacingRight)
+        {
+            transform.position = new Vector3(transform.position.x - Poise, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x + Poise, transform.position.y, transform.position.z);
+        }
         CameraScript.Instance.CameraShake(0.3f, 1.0f);
     }
 
