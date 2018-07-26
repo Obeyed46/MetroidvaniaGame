@@ -184,16 +184,19 @@ public class PlayerController : MonoBehaviour
             }
 
             //Use Shield
-            if(Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            if (EquipmentPanel.Instance.EquipSlots[5].Item != null)
             {
-                MyAnim.SetBool("Shield", true);
-                MyRB.velocity = new Vector2(0, MyRB.velocity.y);
-                Shielded = true;
-            }
-            else if(Input.GetAxisRaw("RightTrigger") == 0)
-            {
-                MyAnim.SetBool("Shield", false);
-                Shielded = false;
+                if (Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle") || Input.GetAxisRaw("RightTrigger") == 1 && MyAnim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                {
+                    MyAnim.SetBool("Shield", true);
+                    MyRB.velocity = new Vector2(0, MyRB.velocity.y);
+                    Shielded = true;
+                }
+                else if (Input.GetAxisRaw("RightTrigger") == 0)
+                {
+                    MyAnim.SetBool("Shield", false);
+                    Shielded = false;
+                }
             }
 
             //Disable collision with enemies during the roll

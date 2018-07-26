@@ -24,5 +24,8 @@ public class EquippableItem : Item {
     public Sprite Sprite1, Sprite2, Sprite3;
     [Space]
     public int AnimLayer;
+    
+  
+    
 
 }
