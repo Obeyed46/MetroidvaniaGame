@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: KnightBigSword
   m_EditorClassIdentifier: 
   ItemName: KnightBigSword
-  Icon: {fileID: 21300008, guid: 1121f926deea46c4b87b28d2ea6c71c9, type: 3}
+  Icon: {fileID: 21300000, guid: 39c4dde0741cd0c469262d8402183140, type: 3}
   DisableHair: 0
   twoHanded: 1
   PhysicDEF: 0
