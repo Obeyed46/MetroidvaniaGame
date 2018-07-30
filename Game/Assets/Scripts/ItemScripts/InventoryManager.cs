@@ -139,6 +139,10 @@ public class InventoryManager : MonoBehaviour
                         break;
                     case EquipmentType.Weapon1:
                         Character.Instance.Weapon1Sprite.sprite = EquipItem.Icon;
+                        if (EquipItem.twoHanded)
+                        {
+                            UnequipFromEquipPanel(EquipmentPanel.Instance.EquipSlots[5].Item);
+                        }
                         CreatePlayer.Instance.Weapon1Dam = EquipItem.PhysicDamage + EquipItem.FireDamage + EquipItem.EletricDamage + EquipItem.MagicDamage + EquipItem.PoisonDamage;
                         break;
                     case EquipmentType.Weapon2:

@@ -170,6 +170,33 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: KnightBigSwLayer
+    m_StateMachine: {fileID: 1107544917394329628}
+    m_Mask: {fileID: 0}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 1102780324317457042}
+      m_Motion: {fileID: 7400000, guid: 815b029c0ab99864087a570b181ab8a8, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102387455074178326}
+      m_Motion: {fileID: 7400000, guid: 749b7535bae135540ac0f1f3f8938c6a, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102106646823398500}
+      m_Motion: {fileID: 7400000, guid: b70d41b126b26c241a7e40066d3a0014, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102577055853324834}
+      m_Motion: {fileID: 7400000, guid: b004c9fe942a63940990bee103a1534a, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102580917033429472}
+      m_Motion: {fileID: 7400000, guid: 04b8dd7d1fc7fc74b9ec5a3de5d7df0b, type: 2}
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: 0
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!114 &114353734509513384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1200,6 +1227,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102096263412693560
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: KnightBigSwRun1
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 749b7535bae135540ac0f1f3f8938c6a, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102106646823398500
 AnimatorState:
   serializedVersion: 5
@@ -1207,7 +1259,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Attack1
-  m_Speed: 3
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101290962096952000}
@@ -1642,7 +1694,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Attack2
-  m_Speed: 2.5
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101358430244995636}
@@ -1669,7 +1721,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Attack3
-  m_Speed: 3
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101329767772735470}
@@ -1899,6 +1951,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102933205468404002
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: KnightBigSwAttack3
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 04b8dd7d1fc7fc74b9ec5a3de5d7df0b, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102952330931002164
 AnimatorState:
   serializedVersion: 5
@@ -2067,6 +2144,12 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102737987048797210}
     m_Position: {x: 717, y: 123, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102933205468404002}
+    m_Position: {x: 752, y: 188, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102096263412693560}
+    m_Position: {x: 787, y: 253, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101935881640372726}
@@ -2141,6 +2224,24 @@ AnimatorStateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ShieldLayer
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
+--- !u!1107 &1107544917394329628
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: KnightBigSwLayer
   m_ChildStates: []
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
