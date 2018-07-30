@@ -139,7 +139,7 @@ public class InventoryManager : MonoBehaviour
                         break;
                     case EquipmentType.Weapon1:
                         Character.Instance.Weapon1Sprite.sprite = EquipItem.Icon;
-                        if (EquipItem.twoHanded)
+                        if (EquipItem.twoHanded && EquipmentPanel.Instance.EquipSlots[5].Item != null)
                         {
                             UnequipFromEquipPanel(EquipmentPanel.Instance.EquipSlots[5].Item);
                         }

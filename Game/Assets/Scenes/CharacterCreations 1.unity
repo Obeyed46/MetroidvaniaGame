@@ -9075,7 +9075,7 @@ MonoBehaviour:
   Rolling: 0
   CanCollide: 0
   Shielded: 0
-  coolDown: 0.4
+  coolDown: 0.5
   Timer2: 0
   Timer3: 0
 --- !u!50 &1832600182
@@ -9660,7 +9660,7 @@ SpriteRenderer:
   m_Size: {x: 0.96, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
 --- !u!1 &1912116321
 GameObject:
