@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 2493
+  controlID: 9746
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 2494
+  controlID: 9747
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 2495
+  controlID: 9748
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -199,9 +199,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a219ffff
-    m_LastClickedID: 0
-    m_ExpandedIDs: f0fbffff00000000
+    m_SelectedIDs: 0a1c0000
+    m_LastClickedID: 7178
+    m_ExpandedIDs: f0fbffff00000000ba1900000a1c00003e1c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -284,9 +284,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -164.07849, y: 141.82907, z: -35.552578}
+    m_Target: {x: -9.320784, y: 55.27924, z: -30.373621}
     speed: 2
-    m_Value: {x: -164.07849, y: 141.82907, z: -35.552578}
+    m_Value: {x: -9.320784, y: 55.27924, z: -30.373621}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -318,9 +318,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 603.04626
+    m_Target: 310.60968
     speed: 2
-    m_Value: 603.04626
+    m_Value: 310.60968
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -409,14 +409,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.9082746
+    - e00: 0.99879044
       e01: 0
       e02: 0
-      e03: 296.5417
+      e03: -511.35855
       e10: 0
-      e11: 0.9082746
+      e11: 0.99879044
       e12: 0
-      e13: 262.33282
+      e13: 291.2504
       e20: 0
       e21: 0
       e22: 1
@@ -522,8 +522,12 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 0}
-  m_BreadCrumbs: []
+  m_AnimatorController: {fileID: 9100000, guid: 6cf5ecf505211d44d83187d689f5875e,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 1107005055426251414, guid: 6cf5ecf505211d44d83187d689f5875e,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -534,7 +538,7 @@ MonoBehaviour:
     m_IsLocked: 0
   m_CurrentEditor: 0
   m_LayerEditor:
-    m_SelectedLayerIndex: 0
+    m_SelectedLayerIndex: 3
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -598,19 +602,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Sprites/Effects
+    - Assets/Animations/CharacterAnimation/KnightBigSword
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Effects
+  - Assets/Animations/CharacterAnimation/KnightBigSword
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 386}
-    m_SelectedIDs: 46100000
-    m_LastClickedID: 4166
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 64150000
+    m_LastClickedID: 5476
     m_ExpandedIDs: 0000000012090000840a0000d80d0000fc0d0000be0f00001c1000005a1100007e120000ec120000fc12000088140000bc140000d814000066150000ae150000ec16000028170000883e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -664,8 +668,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a219ffff
-    m_LastClickedInstanceID: -58974
+    m_SelectedInstanceIDs: 0a1c0000
+    m_LastClickedInstanceID: 7178
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe3800001845000028450000f25b00005a3d0000d83f000026400000c041000006400000681100009e6b000074110000540b000000000000ae17000064550000503e0000c8450000ae110000763e0000b0110000823e0000
     m_RenameOverlay:
