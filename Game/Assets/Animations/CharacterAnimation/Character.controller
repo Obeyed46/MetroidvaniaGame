@@ -148,7 +148,7 @@ AnimatorController:
     m_Motions:
     - serializedVersion: 2
       m_State: {fileID: 1102106646823398500}
-      m_Motion: {fileID: 7400000, guid: fe1dd24e4b70b35419f4c6e8699fc697, type: 2}
+      m_Motion: {fileID: 7400000, guid: a93d31fd42f28664ab8665c01c8d265f, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102780324317457042}
       m_Motion: {fileID: 0}
@@ -157,7 +157,7 @@ AnimatorController:
       m_Motion: {fileID: 7400000, guid: a0b9a10738c6b644d888441133dffa14, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102580917033429472}
-      m_Motion: {fileID: 7400000, guid: a93d31fd42f28664ab8665c01c8d265f, type: 2}
+      m_Motion: {fileID: 7400000, guid: fe1dd24e4b70b35419f4c6e8699fc697, type: 2}
     - serializedVersion: 2
       m_State: {fileID: 1102952330931002164}
       m_Motion: {fileID: 7400000, guid: 5f9fcfb82a292794f9c144f06e8a1286, type: 2}
@@ -168,7 +168,7 @@ AnimatorController:
     m_SyncedLayerIndex: 0
     m_DefaultWeight: 0
     m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
+    m_SyncedLayerAffectsTiming: 1
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
     m_Name: KnightBigSwLayer

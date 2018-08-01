@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 828
+  controlID: 12007
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 757
+  controlID: 12008
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 758
+  controlID: 12009
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,9 +364,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 72b3f6ff
     m_LastClickedID: 0
-    m_ExpandedIDs: f0fbffff00000000
+    m_ExpandedIDs: d2acffffe8bffffff0fbffff0000000088440000e84700004853000098550000cc550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -421,9 +421,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -167.36258, y: 46.845684, z: -26.71712}
+    m_Target: {x: -275.04254, y: 79.286865, z: -3.8039863}
     speed: 2
-    m_Value: {x: -167.36258, y: 46.845684, z: -26.71712}
+    m_Value: {x: -275.04254, y: 79.286865, z: -3.8039863}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -455,9 +455,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 280.31723
+    m_Target: 468.9341
     speed: 2
-    m_Value: 280.31723
+    m_Value: 468.9341
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -546,14 +546,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 1.7310483
+    - e00: 1.5052595
       e01: 0
       e02: 0
-      e03: -800.93665
+      e03: -151.16837
       e10: 0
-      e11: 1.7310483
+      e11: 1.5052595
       e12: 0
-      e13: -206.45038
+      e13: 54.487305
       e20: 0
       e21: 0
       e22: 1
@@ -709,19 +709,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Animations/CharacterAnimation/KnightBigSword
+    - Assets/Sprites/Effects
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations/CharacterAnimation/KnightBigSword
+  - Assets/Sprites/Effects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6e150000
-    m_LastClickedID: 5486
+    scrollPos: {x: 0, y: 506}
+    m_SelectedIDs: 4a100000
+    m_LastClickedID: 4170
     m_ExpandedIDs: 0000000012090000860a0000dc0d0000000e0000c20f0000201000006011000084120000f21200000213000090140000c4140000e014000070150000b8150000f616000032170000a63e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -778,7 +778,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe3800001845000028450000f25b00005a3d0000d83f000026400000c041000006400000681100009e6b000074110000540b000000000000ae17000064550000503e0000c8450000ae110000763e0000b0110000823e0000
+    m_ExpandedInstanceIDs: c62300009c290000623600008627000050280000b0270000802700005e290000402e000058290000902d00009ae40100542e0000c63c00004a0e0000380b0000fe3800001845000028450000f25b00005a3d0000d83f000026400000c041000006400000681100009e6b00007411000000000000ae17000064550000503e0000c8450000ae110000763e0000b0110000823e0000b83e0000940c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
