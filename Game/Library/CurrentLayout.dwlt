@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 8910
+  controlID: 6731
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 2072
     height: 1307
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 8924
+  controlID: 6648
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 2072
     height: 754
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 8925
+  controlID: 6649
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -368,8 +368,8 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
+    m_SelectedIDs: 6c1a0000
+    m_LastClickedID: 6764
     m_ExpandedIDs: e6fbffff000000006c1a0000c21c0000f61c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -17.757843, y: 31.06785, z: -2.5372865}
+    m_Target: {x: -294.08777, y: 141.56076, z: -5.0307646}
     speed: 2
-    m_Value: {x: -17.757843, y: 31.06785, z: -2.5372865}
+    m_Value: {x: -294.08777, y: 141.56076, z: -5.0307646}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -459,9 +459,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 279.33325
+    m_Target: 721.5055
     speed: 2
-    m_Value: 279.33325
+    m_Value: 721.5055
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -713,19 +713,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Effects
+    - Assets/Animations/CharacterAnimation/RedSwordAnimations
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Effects
+  - Assets/Animations/CharacterAnimation/RedSwordAnimations
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\GitHubProject\MetroidvaniaGame\Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 529}
-    m_SelectedIDs: b6100000
-    m_LastClickedID: 4278
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: c0160000
+    m_LastClickedID: 5824
     m_ExpandedIDs: 0000000080090000f20a00004c0e0000700e0000321000008a100000da110000fe1200006a1300007e1300001c150000521500006e1500000a1600005016000094170000d0170000823f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
