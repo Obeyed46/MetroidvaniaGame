@@ -232,6 +232,9 @@ AnimatorController:
     - serializedVersion: 2
       m_State: {fileID: 1102580917033429472}
       m_Motion: {fileID: 7400000, guid: 70bd3e67c2ea8a4428ce9eea19d59dca, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: 1102952330931002164}
+      m_Motion: {fileID: 7400000, guid: 29ce0137df498754e86d626ab7221f54, type: 2}
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: 0
@@ -1526,6 +1529,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102210756323802792
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: RedSwordHeavyAttack
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 29ce0137df498754e86d626ab7221f54, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102215990453367538
 AnimatorState:
   serializedVersion: 5
@@ -2502,6 +2530,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102228955319442496}
     m_Position: {x: 1137, y: 903, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102210756323802792}
+    m_Position: {x: 1172, y: 968, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101935881640372726}

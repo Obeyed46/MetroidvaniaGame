@@ -5537,8 +5537,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.41666666
+  - time: 0.4
     functionName: Attack3
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.41666666
+    functionName: doNotPlay
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -5546,13 +5553,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.43333334
     functionName: EndAttackSprint
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.45
-    functionName: doNotPlay
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

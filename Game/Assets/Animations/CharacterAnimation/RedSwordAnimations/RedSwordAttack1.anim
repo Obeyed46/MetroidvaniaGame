@@ -5101,7 +5101,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.35
+  - time: 0.3
+    functionName: doNotPlay
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
     functionName: Attack2
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -5110,13 +5117,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.36666667
     functionName: EndAttackSprint
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.38333333
-    functionName: doNotPlay
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
