@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -14,6 +14,7 @@ MonoBehaviour:
   ItemName: Knight Gaunlets
   Icon: {fileID: 21300000, guid: 0c55496a83c479749b30b2a45d239a5e, type: 3}
   DisableHair: 0
+  twoHanded: 0
   PhysicDEF: 10
   FireDEF: 5
   EletricDEF: 1
@@ -26,7 +27,11 @@ MonoBehaviour:
   PoisonDamage: 0
   Weight: 0
   EquipmentType: 2
-  Sprite1: {fileID: 21300000, guid: 0c55496a83c479749b30b2a45d239a5e, type: 3}
-  Sprite2: {fileID: 21300002, guid: 0c55496a83c479749b30b2a45d239a5e, type: 3}
+  Sprite1: {fileID: 21300016, guid: 812784503cae5df459d24f4d2e5dbedd, type: 3}
+  Sprite2: {fileID: 21300018, guid: 812784503cae5df459d24f4d2e5dbedd, type: 3}
   Sprite3: {fileID: 0}
+  Sprite4: {fileID: 0}
+  Sprite5: {fileID: 0}
+  Sprite6: {fileID: 0}
+  Sprite7: {fileID: 0}
   AnimLayer: 0
