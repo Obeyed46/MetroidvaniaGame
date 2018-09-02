@@ -10,6 +10,8 @@ TextureImporter:
     21300010: LegionaryArmor_5
     21300012: LegionaryArmor_6
     21300014: LegionaryArmor_7
+    21300016: LegionaryArmor_8
+    21300018: LegionaryArmor_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -95,18 +97,18 @@ TextureImporter:
       name: LegionaryArmor_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 85
+        x: 3
+        y: 86
         width: 9
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed91c1b90c2fea84c9c7d650fab1e216
+      spriteID: 8fb57260e0ab9d44a99ade4ea8a246f7
       vertices: []
       indices: 
       edges: []
@@ -116,17 +118,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 23
-        y: 75
-        width: 20
-        height: 20
+        y: 76
+        width: 13
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a8844d25d778f746885674d8aade326
+      spriteID: 782f6396ed710e94fadc6ea53d294ab5
       vertices: []
       indices: 
       edges: []
@@ -135,18 +137,18 @@ TextureImporter:
       name: LegionaryArmor_2
       rect:
         serializedVersion: 2
-        x: 52
-        y: 84
-        width: 8
-        height: 10
+        x: 47
+        y: 85
+        width: 7
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66d93d873a44f664ba3f65916d9fd27a
+      spriteID: cac35580a39bcd64eb014aa53c570622
       vertices: []
       indices: 
       edges: []
@@ -155,18 +157,18 @@ TextureImporter:
       name: LegionaryArmor_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 56
-        width: 7
-        height: 9
+        x: 62
+        y: 64
+        width: 32
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d3a3c69c4b862c44ab0d481831f5bff
+      spriteID: 17ec0a076d76ecd409029d47e7af5e27
       vertices: []
       indices: 
       edges: []
@@ -175,18 +177,18 @@ TextureImporter:
       name: LegionaryArmor_4
       rect:
         serializedVersion: 2
-        x: 33
-        y: 58
+        x: 7
+        y: 56
         width: 6
-        height: 6
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3535379b7f49474d81ef012f8005c21
+      spriteID: 01f3e9d4c007293419b601b38db12834
       vertices: []
       indices: 
       edges: []
@@ -195,18 +197,18 @@ TextureImporter:
       name: LegionaryArmor_5
       rect:
         serializedVersion: 2
-        x: 50
-        y: 48
-        width: 32
-        height: 25
+        x: 33
+        y: 58
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576ee85a4729cdf4ea3c1846ea2d9520
+      spriteID: 00dc547a68df80e45b98b398876c61d4
       vertices: []
       indices: 
       edges: []
@@ -215,18 +217,18 @@ TextureImporter:
       name: LegionaryArmor_6
       rect:
         serializedVersion: 2
-        x: 5
-        y: 25
+        x: 59
+        y: 38
         width: 8
-        height: 11
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f61223e65fd1ac4a85fce01a4e4ad2d
+      spriteID: 19a4dbb03817da34499935f7e41f47a6
       vertices: []
       indices: 
       edges: []
@@ -235,18 +237,58 @@ TextureImporter:
       name: LegionaryArmor_7
       rect:
         serializedVersion: 2
-        x: 33
-        y: 24
-        width: 7
-        height: 12
+        x: 87
+        y: 38
+        width: 8
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7cc1e3b319398e4591205365f68579e
+      spriteID: e972d9d8b95ec9a4e9113ed342fc6ce3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LegionaryArmor_8
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 25
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392bf26aa23005247a6eb2eaa556eee0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LegionaryArmor_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 24
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e3df26ecce5cd48b85f7abaf2c1088
       vertices: []
       indices: 
       edges: []
@@ -254,7 +296,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ffb055bd9a0706d4f94a882a8a9c298c
+    spriteID: cb9562c31c284384ba5dafd90f2fee34
     vertices: []
     indices: 
     edges: []

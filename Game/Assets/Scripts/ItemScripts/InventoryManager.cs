@@ -132,6 +132,10 @@ public class InventoryManager : MonoBehaviour
                         Character.Instance.ChestSprite.sprite = EquipItem.Sprite1;
                         Character.Instance.ChestSprite1.sprite = EquipItem.Sprite2;
                         Character.Instance.ChestSprite2.sprite = EquipItem.Sprite3;
+                        Character.Instance.Shoulder1.sprite = EquipItem.Sprite4;
+                        Character.Instance.Shoulder2.sprite = EquipItem.Sprite5;
+                        Character.Instance.Cap.sprite = EquipItem.Sprite6;
+                        Character.Instance.Cap2.sprite = EquipItem.Sprite7;
                         break;
                     case EquipmentType.Hands:
                         Character.Instance.HandsSprite1.sprite = EquipItem.Sprite1;
@@ -239,6 +243,10 @@ public class InventoryManager : MonoBehaviour
                     Character.Instance.ChestSprite.sprite = null;
                     Character.Instance.ChestSprite1.sprite = null;
                     Character.Instance.ChestSprite2.sprite = null;
+                    Character.Instance.Shoulder1.sprite = null;
+                    Character.Instance.Shoulder2.sprite = null;
+                    Character.Instance.Cap.sprite = null;
+                    Character.Instance.Cap2.sprite = null;
                     break;
                 case EquipmentType.Legs:
                     Character.Instance.LegsSprite1.sprite = null;

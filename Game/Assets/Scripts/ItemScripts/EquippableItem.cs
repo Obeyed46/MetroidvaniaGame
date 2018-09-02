@@ -21,7 +21,7 @@ public class EquippableItem : Item {
     [Space]
     public EquipmentType EquipmentType;
     [Space]
-    public Sprite Sprite1, Sprite2, Sprite3;
+    public Sprite Sprite1, Sprite2, Sprite3, Sprite4, Sprite5, Sprite6, Sprite7;
     [Space]
     public int AnimLayer;
     
